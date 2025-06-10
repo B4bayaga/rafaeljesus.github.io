@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tutoriais on Rafael Jesus</title>
+    <link>http://localhost:1313/categories/tutoriais/</link>
+    <description>Recent content in Tutoriais on Rafael Jesus</description>
+    <generator>Hugo</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Tue, 10 Jun 2025 10:21:35 -0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/tutoriais/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dando Vida ao Meu Blog</title>
+      <link>http://localhost:1313/posts/iniciando-meu-blog-com-hugo/</link>
+      <pubDate>Tue, 10 Jun 2025 10:21:35 -0300</pubDate>
+      <guid>http://localhost:1313/posts/iniciando-meu-blog-com-hugo/</guid>
+      <description>&lt;h1 id=&#34;dando-vida-ao-meu-blog-um-guia-prático-com-hugo&#34;&gt;&#xA;  &lt;center&gt;Dando Vida ao Meu Blog: Um Guia Prático com &lt;a href=&#34;https://gohugo.io/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo&lt;/a&gt;&lt;/center&gt;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#dando-vida-ao-meu-blog-um-guia-pr%c3%a1tico-com-hugo&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link para o cabeçalho&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link para o cabeçalho&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;Para começar qual tecnologia usar para construir e publicar o &lt;strong&gt;Meu Blog&lt;/strong&gt;?&lt;/p&gt;&#xA;&lt;p&gt;A resposta para essa pergunta foi francamente difícil devido a vasta quantidade de opções existentes. E logo de cara pensei em construir com as ferramentas que &amp;ldquo;domino&amp;rdquo; (na data que escrevo este artigo), que são &lt;a href=&#34;https://www.python.org/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Python&lt;/a&gt; com &lt;a href=&#34;https://www.djangoproject.com/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Django&lt;/a&gt;, depois obviamente pensei em &lt;a href=&#34;https://wordpress.org/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wordpress&lt;/a&gt;, &lt;a href=&#34;https://plone.org/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Plone&lt;/a&gt; entre outras. Passei uma semana inteira apenas para escolher que tecnologia usar, e foi quando vi um post do &lt;a href=&#34;https://github.com/akitaonrails&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Fabio Akita&lt;/a&gt;, no post ele descrevia como foi migrar o seu blog &lt;a href=&#34;https://akitaonrails.com/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AkitaOnRails&lt;/a&gt;, salve engano escrito em &lt;a href=&#34;https://rubyonrails.org/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rails&lt;/a&gt;, para usar o &lt;strong&gt;Hugo&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

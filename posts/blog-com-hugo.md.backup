@@ -1,0 +1,41 @@
++++ 
+draft = true
+date = 2025-06-10T10:21:35-03:00
+title = "Dando Vida ao Meu Blog"
+description = "Um Guia Prático com Hugo"
+slug = "iniciando-meu-blog-com-hugo"
+authors = ["Rafael Jesus"]
+tags = []
+categories = ["Tutoriais"]
+externalLink = ""
+series = []
++++
+# <center>Dando Vida ao Meu Blog: Um Guia Prático com [Hugo](https://gohugo.io/)</center>
+
+Para começar, qual tecnologia usar para construir e publicar o **Meu Blog**?
+
+A resposta para essa pergunta foi francamente difícil devido a vasta quantidade de opções existentes. E logo de cara, pensei em construir com ferramentas que "domino" (na data que escrevo este artigo), que são [Python](https://www.python.org/) com [Django](https://www.djangoproject.com/), depois obviamente pensei em [Wordpress](https://wordpress.org/), [Plone](https://plone.org/) entre outras. Passei uma semana inteira apenas para escolher que tecnologia usar, e foi quando vi um post do [Fabio Akita](https://github.com/akitaonrails), no post, ele descrevia como foi migrar o seu blog [AkitaOnRails](https://akitaonrails.com/), salve engano escrito em [Rails](https://rubyonrails.org/), para usar o **Hugo**.
+
+Mas, que diabos é **Hugo**? 🤔
+
+Pois bem, fui pesquisar e descobrir que **Hugo** é um software de código aberto escrito em [Go](https://go.dev/) utilizado para gerar **sites estáticos** com a promessa de ser "extremamente rápido" e "eficiente". Ele é usado para construir diversos tipos de sites, mas é especialmente popular na criação de *Blogs*, *Sites de Documentação*, *Portfólios Pessoais ou Profissionais*, etc...
+
+Entre as vantagens que o **Hugo** traz por padrão, como escrita em *Markdown* e uma vasta quantidade de ***Themes***, o que mais me chamou atenção, foi a possibilidade de hospedar o **Meu Blog** no **Github Pages** totalmente **free**, o que para a natureza do projeto se encaixa como uma luva.
+
+Mas, do que vou precisar? 🧐
+
+Bom, para começar acessei a documentação do [**Hugo**](https://gohugo.io/documentation/), e descobri que não tem como fazer um `sudo apt install hugo` e pronto, é só sair digitando loucamente, então resolvi fazer um checklist:
+
+- [ ] 	Instalar a linguagem [Go](https://go.dev/).
+- [ ] 	Instalar o [Hugo](https://gohugo.io/).
+
+- [ ] 	Configurar o repositório no [GitHub](https://github.com/B4bayaga/rafaeljesus.github.io).
+- [ ] 	Configurar DNS do Domínio.
+- [ ] 	Configurar o [GitHub Pages](https://pages.github.com/).
+- [ ] 	Configurar Workflow [GitHub Actions](https://github.com/features/actions).
+
+## Configurar o repositório no [GitHub](https://github.com/B4bayaga/rafaeljesus.github.io). 💻
+
+Criei dois repositórios no GitHub, um privado para hospedar o código fonte do **Meu Blog** e outro repositório **público** para configurar posteriormente o GitHub Pages e torná-lo público para o mundo. 
+
+A ideia é clonar o repositório público que chamei de [rafaeljesus.github.io](https://github.com/B4bayaga/rafaeljesus.github.io), em um submódulo do git dentro do repositório privado em um diretório o nomeando como **public/**, que por sua vês, é o diretório que o Hugo por padrão armazena os arquivos públicos que serão expostos na internet. 
