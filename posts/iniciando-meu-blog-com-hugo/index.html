@@ -161,7 +161,7 @@
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              2 minutos de leitura
+              3 minutos de leitura
             </span>
           </div>
           <div class="authors">
@@ -191,7 +191,7 @@
 <p>Pois bem, fui pesquisar e descobrir que <strong>Hugo</strong> é um software de código aberto escrito em <a href="https://go.dev/"  class="external-link" target="_blank" rel="noopener">Go</a> utilizado para gerar <strong>sites estáticos</strong> com a promessa de ser &ldquo;extremamente rápido&rdquo; e &ldquo;eficiente&rdquo;. Ele é usado para construir diversos tipos de sites, mas é especialmente popular na criação de <em>Blogs</em>, <em>Sites de Documentação</em>, <em>Portfólios Pessoais ou Profissionais</em>, etc&hellip;</p>
 <p>Entre as vantagens que o <strong>Hugo</strong> traz por padrão, como escrita em <em>Markdown</em> e uma vasta quantidade de <em><strong>Themes</strong></em>, o que mais me chamou atenção, foi a possibilidade de hospedar o <strong>Meu Blog</strong> no <strong>Github Pages</strong> totalmente <strong>free</strong>, o que para a natureza do projeto se encaixa como uma luva.</p>
 <p>Mas, do que vou precisar? 🧐</p>
-<p>Bom, para começar acessei a documentação do <a href="https://gohugo.io/documentation/"  class="external-link" target="_blank" rel="noopener"><strong>Hugo</strong></a>, e descobri que não tem como fazer um <code>sudo apt install hugo</code> e pronto, é só sair digitando loucamente, então resolvi fazer um checklist:</p>
+<p>Bom, para começar acessei a documentação do <a href="https://gohugo.io/documentation/"  class="external-link" target="_blank" rel="noopener"><strong>Hugo</strong></a>, e descobri que não tem como digitar um <code>sudo apt install hugo</code> e pronto, é só sair digitando loucamente, então resolvi fazer um checklist:</p>
 <ul>
 <li><input disabled="" type="checkbox"> Instalar a linguagem <a href="https://go.dev/"  class="external-link" target="_blank" rel="noopener">Go</a>.</li>
 <li><input disabled="" type="checkbox"> Instalar o <a href="https://gohugo.io/"  class="external-link" target="_blank" rel="noopener">Hugo</a>.</li>
@@ -201,6 +201,35 @@
 <li><input disabled="" type="checkbox"> Configurar o <a href="https://pages.github.com/"  class="external-link" target="_blank" rel="noopener">GitHub Pages</a>.</li>
 <li><input disabled="" type="checkbox"> Configurar Workflow <a href="https://github.com/features/actions"  class="external-link" target="_blank" rel="noopener">GitHub Actions</a>.</li>
 </ul>
+<h2 id="instalando-a-linguagem-go-">
+  Instalando a linguagem <a href="https://go.dev/"  class="external-link" target="_blank" rel="noopener">Go</a>. 💽
+  <a class="heading-link" href="#instalando-a-linguagem-go-">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link para o cabeçalho"></i>
+    <span class="sr-only">Link para o cabeçalho</span>
+  </a>
+</h2>
+<p>Antes de seguir com a instalação da linguagem de programação <strong>GO</strong>, devo explicar que uso o sistema operacional <a href="https://www.linux.org/"  class="external-link" target="_blank" rel="noopener">Linux</a> na distribuição <a href="https://system76.com/"  class="external-link" target="_blank" rel="noopener">Pop!_OS</a>, por tanto, todo processo de instalação e configuração se baseiam nessa configuração de sistema operacional.
+Dito isto, vamos para a <a href="https://go.dev/doc/install"  class="external-link" target="_blank" rel="noopener">documentação</a> oficial do <strong>GO</strong>, que pede para rodar o comando:</p>
+<p><code>rm -rf /usr/local/go &amp;&amp; tar -C /usr/local -xzf go1.24.4.linux-amd64.tar.gz</code></p>
+<p>Esse comando remove qualquer instalação anterior do <strong>GO</strong>, exclui a pasta <code>/usr/local/go</code> (caso exista), depois baixa e extrai o arquivo <code>*.tar.gz</code>, na sequencia criando uma nova árvore de diretórios do Go em <code>/usr/local/go</code>.</p>
+<p>Agora adicionamos o caminho do binário na variável de ambiente do sistema com o comando:</p>
+<p><code>export PATH=$PATH:/usr/local/go/bin</code></p>
+<p>Agora basta digitar ainda no terminal basta digitar:</p>
+<p><code>go version</code></p>
+<p>A saída dever conter a versão do <strong>GO</strong>, o que mostra que foi instalado com sucesso.</p>
+<h2 id="intalando-o-hugo-">
+  Intalando o Hugo. 💾
+  <a class="heading-link" href="#intalando-o-hugo-">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link para o cabeçalho"></i>
+    <span class="sr-only">Link para o cabeçalho</span>
+  </a>
+</h2>
+<p>Agora voltamos à documentação do <a href="https://gohugo.io/installation/linux/"  class="external-link" target="_blank" rel="noopener"><strong>Hugo</strong></a>. Aqui um parentese, a documentação orienta instalar via <strong>snap</strong>, porém, optei pela instalação via <a href="https://github.com/gohugoio/hugo?tab=readme-ov-file"  class="external-link" target="_blank" rel="noopener">GitHub</a>, mais precisamente a versão <em><strong>extended edition</strong></em>. O primeiro motivo é que alguns temas do <strong>Hugo</strong> exigem versão <strong>extended</strong>, o outro motivo é simplesmente por que eu quis. 😩</p>
+<p>Continuando, no terminal rode o comando:</p>
+<p><code>CGO_ENABLED=1 go install -tags extended github.com/gohugoio/hugo@latest</code></p>
+<p>Para testar se tudo ocorreu bem rode:</p>
+<p><code>hugo version</code></p>
+<p>Mais uma vês, a saída sendo a versão do <strong>Hugo</strong>, tudo ocerreu bem.</p>
 <h2 id="configurar-o-repositório-no-github-">
   Configurar o repositório no <a href="https://github.com/B4bayaga/rafaeljesus.github.io"  class="external-link" target="_blank" rel="noopener">GitHub</a>. 💻
   <a class="heading-link" href="#configurar-o-reposit%c3%b3rio-no-github-">
@@ -221,7 +250,35 @@
         
         
         
-        
+        <div class="comments">
+    <script>
+  
+    let getTheme = window.localStorage && window.localStorage.getItem("colorscheme");
+  
+    getTheme = getTheme == null ? 'noborder_dark' : getTheme;
+    
+    let s = document.createElement('script');
+    s.src = 'https://giscus.app/client.js';
+    s.setAttribute('data-repo', 'B4bayaga\/rafaeljesus.github.io');
+    s.setAttribute('data-repo-id', 'R_kgDOO5NxSw');
+    s.setAttribute('data-category', 'General');
+    s.setAttribute('data-category-id', 'DIC_kwDOO5NxS84CrasD');
+    s.setAttribute('data-mapping', 'url');
+    s.setAttribute('data-term', '');
+    s.setAttribute('data-strict', '0');
+    s.setAttribute('data-reactions-enabled', '1');
+    s.setAttribute('data-emit-metadata', '0');
+    s.setAttribute('data-input-position', 'top');
+    s.setAttribute('data-theme', getTheme);
+    s.setAttribute('data-lang', 'pt');
+    s.setAttribute('data-loading', 'lazy');
+    s.setAttribute('crossorigin', 'anonymous');
+    s.setAttribute('async', '');
+    document.querySelector('div.comments').innerHTML = '';
+    document.querySelector('div.comments').appendChild(s);
+  
+    </script>
+    </div>
         
         
         
