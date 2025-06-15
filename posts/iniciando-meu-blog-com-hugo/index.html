@@ -161,7 +161,7 @@
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              3 minutos de leitura
+              6 minutos de leitura
             </span>
           </div>
           <div class="authors">
@@ -217,6 +217,9 @@ Dito isto, vamos para a <a href="https://go.dev/doc/install"  class="external-li
 <p>Agora basta digitar ainda no terminal basta digitar:</p>
 <p><code>go version</code></p>
 <p>A saída dever conter a versão do <strong>GO</strong>, o que mostra que foi instalado com sucesso.</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Instalar a linguagem <a href="https://go.dev/"  class="external-link" target="_blank" rel="noopener">Go</a>.</li>
+</ul>
 <h2 id="intalando-o-hugo-">
   Intalando o Hugo. 💾
   <a class="heading-link" href="#intalando-o-hugo-">
@@ -230,6 +233,9 @@ Dito isto, vamos para a <a href="https://go.dev/doc/install"  class="external-li
 <p>Para testar se tudo ocorreu bem rode:</p>
 <p><code>hugo version</code></p>
 <p>Mais uma vês, a saída sendo a versão do <strong>Hugo</strong>, tudo ocerreu bem.</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Instalar o <a href="https://gohugo.io/"  class="external-link" target="_blank" rel="noopener">Hugo</a>.</li>
+</ul>
 <h2 id="configurar-o-repositório-no-github-">
   Configurar o repositório no <a href="https://github.com/B4bayaga/rafaeljesus.github.io"  class="external-link" target="_blank" rel="noopener">GitHub</a>. 💻
   <a class="heading-link" href="#configurar-o-reposit%c3%b3rio-no-github-">
@@ -238,13 +244,90 @@ Dito isto, vamos para a <a href="https://go.dev/doc/install"  class="external-li
   </a>
 </h2>
 <p>Criei dois repositórios no GitHub, um privado para hospedar o código fonte do <strong>Meu Blog</strong> e outro repositório <strong>público</strong> para configurar posteriormente o GitHub Pages e torná-lo público para o mundo.</p>
-<p>A ideia é clonar o repositório público que chamei de <a href="https://github.com/B4bayaga/rafaeljesus.github.io"  class="external-link" target="_blank" rel="noopener">rafaeljesus.github.io</a>, em um submódulo do git dentro do repositório privado em um diretório o nomeando como <strong>public/</strong>, que por sua vês, é o diretório que o Hugo por padrão armazena os arquivos públicos que serão expostos na internet.</p>
+<p>A ideia é organizar o meu projeto de forma mais eficiente. Pense nisso como ter duas pastas interligadas:</p>
+<ol>
+<li>Uma pasta privada onde guardarei todo o &ldquo;esqueleto&rdquo; e o conteúdo bruto do <strong>Meu Blog</strong> e arquivos de configuração do Hugo.</li>
+<li>Uma pasta pública, que fica dentro da primeira, contendo apenas o site pronto para ser publicado na internet.</li>
+</ol>
+<p>Para <strong>&ldquo;conectar&rdquo;</strong> as duas, vamos usar um recurso do Git chamado submódulo. Configuraremos o repositório público que chamei de  <code>rafaeljesus.github.io</code> (onde o Hugo irá gerar o <strong>Meu Blog</strong>), para ser um submódulo dentro do nosso projeto privado. Este submódulo será &ldquo;montado&rdquo; no diretório <code> public/</code>, que é exatamente onde o Hugo gera e armazena a versão final do site/blog.</p>
+<p>Em resumo: O repositório principal e privado conterá o código-fonte, enquanto a subpasta <code>public/</code> será um clone direto e atualizável do repositório público, mantendo tudo sincronizado e organizado.</p>
+<p>Uma vês definido e explicado a estrutura do <strong>Meu Blog</strong> vamos para o terminal. Clonamos o repositório privado com o comando:</p>
+<p><code>git clone https://github.com/meu-id/meu-repositorio.git</code></p>
+<p>Agora, criamos o projeto com <strong>Hugo</strong> usando o comando abaixo:</p>
+<p><code>hugo new site meu-repositorio --force</code></p>
+<p>A <em>flag</em> <code>--force</code> força o <strong>Hugo</strong> a criar o site em um diretório existente, no meu caso o repositório privado que clonei anteriormente.</p>
+<p>Agora, com o comando <code>cd meu-repositorio</code>, entramos no diretório do repositório e criamos um <strong>submódulo</strong> do git, clonando o <strong>repositório publico</strong> e nomeando o diretório como <code>public/</code>, conforme a explicação anterior, isso tudo usando o comando a seguir:</p>
+<p><code>git submodule add https://github.com/meu-id/meu-repositorio.git public</code></p>
+<p>Com isso temos a estrutura de diretórios pronta e repositórios devidamente clonados para versionamento, publicação, etc&hellip; do projeto.</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Configurar o repositório no <a href="https://github.com/B4bayaga/rafaeljesus.github.io"  class="external-link" target="_blank" rel="noopener">GitHub</a>.</li>
+</ul>
+<h2 id="instalar-o-theme-">
+  Instalar o <a href="https://themes.gohugo.io/themes/hugo-coder/"  class="external-link" target="_blank" rel="noopener">Theme</a>. 🎀
+  <a class="heading-link" href="#instalar-o-theme-">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link para o cabeçalho"></i>
+    <span class="sr-only">Link para o cabeçalho</span>
+  </a>
+</h2>
+<p>Outro ponto interessante do Hugo é a quantidade de <strong>Temas (<a href="https://themes.gohugo.io/"  class="external-link" target="_blank" rel="noopener">Themes</a>)</strong>, páginas prontas de fácil configuração, personalização e a grande maioria com boa documentação. Após escolha do <strong>Tema</strong> e ler a documentação do mesmo, seguimos no terminal para realizar a instalação.</p>
+<p>Dentro do diretório privado, aquele que contem o código <strong>&ldquo;bruto&rdquo;</strong> do projeto, criarei novamente um submodulo com <strong>Git</strong>, só que agora clonando o <strong>Tema(Them)</strong> dentro do diretório <code>themes/</code> com o comando abaixo:</p>
+<p><code> git submodule add https://github.com/luizdepra/hugo-coder.git themes/hugo-coder</code></p>
+<p><strong>Ok 👌</strong>, agora vou configurar o <strong>Theme</strong> no arquivo <code>hugo.toml</code> no nosso diretório principal.</p>
+<p>No <strong>GitHub</strong> do <strong>Theme</strong> que escolhi, tem um exemplo de arquivo <code>hugo.toml</code>, são as <a href="https://github.com/luizdepra/hugo-coder/blob/main/docs/configurations.md#complete-example"  class="external-link" target="_blank" rel="noopener">configurações mínimas</a> para que ele funcione, basta copiar e colar no arquivo <code>hugo.toml</code> do seu projeto, substituir metadados pessoas, como por exemplo <code>baseURL,title</code>.</p>
+<p>Pronto, com o arquivo <code>hugo.toml</code> configurado é hora de subir o <strong>Hugo</strong> localmente com o comando abaixo e verificar se tudo deu certo:</p>
+<p><code>hugo server</code></p>
+<p><img src="/images/hugo_server.png" alt="Print imagem terminal rodando comando hugo server"></p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Instalar o <a href="https://themes.gohugo.io/themes/hugo-coder/"  class="external-link" target="_blank" rel="noopener">Theme</a>.</li>
+</ul>
+<h2 id="configurar-dns-do-domínio-">
+  Configurar DNS do Domínio. 📝
+  <a class="heading-link" href="#configurar-dns-do-dom%c3%adnio-">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link para o cabeçalho"></i>
+    <span class="sr-only">Link para o cabeçalho</span>
+  </a>
+</h2>
+<p>Antes de configurar o <strong>GitHub Pages</strong> é muito importante configurar o <strong>DNS</strong>. Leve em consideração que tenho um <strong>Domínio</strong> hospedado, geralmente uso o <strong>DNS</strong> da <a href="https://www.cloudflare.com/"  class="external-link" target="_blank" rel="noopener">CloudFare</a>, mas para esse projeto usarei o <strong>DNS</strong> do <a href="https://www.registro.br/"  class="external-link" target="_blank" rel="noopener">registro.br</a>, aqui estou assumindo que o <strong>GitHub Pages</strong> tem um mínimo de projetação contra ataques <a href="https://en.wikipedia.org/wiki/Denial-of-service_attack"  class="external-link" target="_blank" rel="noopener">DoS attack</a>.</p>
+<p>Dentro das configurações do meu <strong>Domínio</strong>, acesso &ldquo;<em><strong>configurar zona DNS</strong></em>&rdquo; e seguindo a <a href="https://docs.github.com/pt/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages#using-an-apex-domain-for-your-github-pages-site"  class="external-link" target="_blank" rel="noopener">documentação</a> do <strong>GitHub Pages</strong> e crio 4 entradas do &ldquo;<strong>Tipo A</strong>&rdquo;, deixo o segundo campo(nome) em branco e aponto para os <strong><a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site"  class="external-link" target="_blank" rel="noopener">IPs do GitHub Pages</a></strong>. Agora crio uma outra entrada do &ldquo;<strong>Tipo CNAME</strong>&rdquo;, no campo &ldquo;<strong>name</strong>&rdquo;, preencho com &ldquo;<strong>www</strong>&rdquo; e por ultimo aponto para o domínio do meu <strong>GitHub</strong>, esse domínio é formado pelo nome do seu usuário seguido de <strong>.github.io</strong>.</p>
+<p><img src="/images/print_conf_dns.png" alt="Print imagem DNS"></p>
+<p>Agora tenho que esperar as configurações se propagarem pelo mundo, esse tempo pode variar bastante.</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Configurar DNS do Domínio.</li>
+</ul>
+<h2 id="configurar-o-github-pages-">
+  Configurar o <a href="https://pages.github.com/"  class="external-link" target="_blank" rel="noopener">GitHub Pages</a>. ⎘
+  <a class="heading-link" href="#configurar-o-github-pages-">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link para o cabeçalho"></i>
+    <span class="sr-only">Link para o cabeçalho</span>
+  </a>
+</h2>
+<p>Acessando o repositório publico no <strong>GitHub</strong>, segui com a configuração do <strong>GitHub Pages</strong>, clicando em <strong>Settings</strong>.</p>
+<p><img src="/images/print_setings_github.png" alt="Imagem Print menu Settings do GitHub"></p>
+<p>Na sequencia basta clicar em <strong>Pages</strong>.</p>
+<div style="text-align: center;">
+  <img src="/images/print_github_pages.png" alt="Imagem Print menu Pages do GitHub" width="auto">
+</div>
+<p>No menu do <strong>GitHub Pages</strong> em <code>Source</code> selecione <code>Deploy from branch</code>, mais abaixo em <code>Brach</code> escolha <code>Main</code> e depois o diretório <code>/(root)</code>.</p>
+<p><img src="/images/print_deploy_branch.png" alt="Print menu deploy com Branch"></p>
+<p>Por fim, em <code>Custom Domain</code> digite o seu domínio, clique em <code>Save</code> e aguarde o <strong>GitHub</strong> checar e validar a configuração.</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Configurar o <a href="https://pages.github.com/"  class="external-link" target="_blank" rel="noopener">GitHub Pages</a>.</li>
+</ul>
+<p>Pronto!! 😁, agora tenho o <strong>Hugo</strong> configurado, agora usando o terminal com o comando <code>hugo build</code> o site sera gerado. Com isso basta fazer dois commits, uma no repositório privado e outra no repositório publico.</p>
 
       </div>
 
 
       <footer>
         
+
+<section class="see-also">
+  
+    
+    
+    
+  
+</section>
 
 
         
