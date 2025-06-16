@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <title>
   Dando Vida ao Meu Blog · Rafael Jesus
 </title>
@@ -22,7 +22,7 @@
   <meta name="twitter:title" content="Dando Vida ao Meu Blog">
   <meta name="twitter:description" content="Um Guia Prático com Hugo">
 
-<meta property="og:url" content="http://localhost:1313/posts/iniciando-meu-blog-com-hugo/">
+<meta property="og:url" content="https://rafaeljesus.dev.br/posts/iniciando-meu-blog-com-hugo/">
   <meta property="og:site_name" content="Rafael Jesus">
   <meta property="og:title" content="Dando Vida ao Meu Blog">
   <meta property="og:description" content="Um Guia Prático com Hugo">
@@ -35,7 +35,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:1313/posts/iniciando-meu-blog-com-hugo/">
+<link rel="canonical" href="https://rafaeljesus.dev.br/posts/iniciando-meu-blog-com-hugo/">
 
 
 <link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -45,7 +45,7 @@
 
   
   
-  <link rel="stylesheet" href="/css/coder.css" media="screen">
+  <link rel="stylesheet" href="/css/coder.min.6445a802b9389c9660e1b07b724dcf5718b1065ed2d71b4eeaf981cc7cc5fc46.css" integrity="sha256-ZEWoArk4nJZg4bB7ck3PVxixBl7S1xtO6vmBzHzF/EY=" crossorigin="anonymous" media="screen" />
 
 
 
@@ -55,7 +55,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
   
 
 
@@ -103,7 +103,7 @@
     <nav class="navigation">
   <section class="container">
     
-    <a class="navigation-title" href="http://localhost:1313/">
+    <a class="navigation-title" href="https://rafaeljesus.dev.br/">
       Rafael Jesus
     </a>
     
@@ -146,7 +146,7 @@
       <header>
         <div class="post-title">
           <h1 class="title">
-            <a class="title-link" href="http://localhost:1313/posts/iniciando-meu-blog-com-hugo/">
+            <a class="title-link" href="https://rafaeljesus.dev.br/posts/iniciando-meu-blog-com-hugo/">
               Dando Vida ao Meu Blog
             </a>
           </h1>
@@ -161,7 +161,7 @@
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              6 minutos de leitura
+              7 minutos de leitura
             </span>
           </div>
           <div class="authors">
@@ -178,16 +178,16 @@
 
       <div class="post-content">
         
-        <h1 id="dando-vida-ao-meu-blog-um-guia-prático-com-hugo">
-  <center>Dando Vida ao Meu Blog: Um Guia Prático com <a href="https://gohugo.io/"  class="external-link" target="_blank" rel="noopener">Hugo</a></center>
-  <a class="heading-link" href="#dando-vida-ao-meu-blog-um-guia-pr%c3%a1tico-com-hugo">
+        <h1 id="dando-vida-ao-meu-blog-um-guia-prático-com-hugo-pt-1">
+  <center>Dando Vida ao Meu Blog: Um Guia Prático com <a href="https://gohugo.io/"  class="external-link" target="_blank" rel="noopener">Hugo</a> (Pt-1)</center>
+  <a class="heading-link" href="#dando-vida-ao-meu-blog-um-guia-pr%c3%a1tico-com-hugo-pt-1">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link para o cabeçalho"></i>
     <span class="sr-only">Link para o cabeçalho</span>
   </a>
 </h1>
 <p>Para começar, qual tecnologia usar para construir e publicar o <strong>Meu Blog</strong>?</p>
 <p>A resposta para essa pergunta foi francamente difícil devido a vasta quantidade de opções existentes. E logo de cara, pensei em construir com ferramentas que &ldquo;domino&rdquo; (na data que escrevo este artigo), que são <a href="https://www.python.org/"  class="external-link" target="_blank" rel="noopener">Python</a> com <a href="https://www.djangoproject.com/"  class="external-link" target="_blank" rel="noopener">Django</a>, depois obviamente pensei em <a href="https://wordpress.org/"  class="external-link" target="_blank" rel="noopener">Wordpress</a>, <a href="https://plone.org/"  class="external-link" target="_blank" rel="noopener">Plone</a> entre outras. Passei uma semana inteira apenas para escolher que tecnologia usar, e foi quando vi um post do <a href="https://github.com/akitaonrails"  class="external-link" target="_blank" rel="noopener">Fabio Akita</a>, no post, ele descrevia como foi migrar o seu blog <a href="https://akitaonrails.com/"  class="external-link" target="_blank" rel="noopener">AkitaOnRails</a>, salve engano escrito em <a href="https://rubyonrails.org/"  class="external-link" target="_blank" rel="noopener">Rails</a>, para usar o <strong>Hugo</strong>.</p>
-<p>Mas, que diabos é <strong>Hugo</strong>? 🤔</p>
+<p>Mas que diabos é <strong>Hugo</strong>? 🤔</p>
 <p>Pois bem, fui pesquisar e descobrir que <strong>Hugo</strong> é um software de código aberto escrito em <a href="https://go.dev/"  class="external-link" target="_blank" rel="noopener">Go</a> utilizado para gerar <strong>sites estáticos</strong> com a promessa de ser &ldquo;extremamente rápido&rdquo; e &ldquo;eficiente&rdquo;. Ele é usado para construir diversos tipos de sites, mas é especialmente popular na criação de <em>Blogs</em>, <em>Sites de Documentação</em>, <em>Portfólios Pessoais ou Profissionais</em>, etc&hellip;</p>
 <p>Entre as vantagens que o <strong>Hugo</strong> traz por padrão, como escrita em <em>Markdown</em> e uma vasta quantidade de <em><strong>Themes</strong></em>, o que mais me chamou atenção, foi a possibilidade de hospedar o <strong>Meu Blog</strong> no <strong>Github Pages</strong> totalmente <strong>free</strong>, o que para a natureza do projeto se encaixa como uma luva.</p>
 <p>Mas, do que vou precisar? 🧐</p>
@@ -199,7 +199,6 @@
 <li><input disabled="" type="checkbox"> Instalar o <a href="https://themes.gohugo.io/themes/hugo-coder/"  class="external-link" target="_blank" rel="noopener">Theme</a>.</li>
 <li><input disabled="" type="checkbox"> Configurar DNS do Domínio.</li>
 <li><input disabled="" type="checkbox"> Configurar o <a href="https://pages.github.com/"  class="external-link" target="_blank" rel="noopener">GitHub Pages</a>.</li>
-<li><input disabled="" type="checkbox"> Configurar Workflow <a href="https://github.com/features/actions"  class="external-link" target="_blank" rel="noopener">GitHub Actions</a>.</li>
 </ul>
 <h2 id="instalando-a-linguagem-go-">
   Instalando a linguagem <a href="https://go.dev/"  class="external-link" target="_blank" rel="noopener">Go</a>. 💽
@@ -313,7 +312,8 @@ Dito isto, vamos para a <a href="https://go.dev/doc/install"  class="external-li
 <ul>
 <li><input checked="" disabled="" type="checkbox"> Configurar o <a href="https://pages.github.com/"  class="external-link" target="_blank" rel="noopener">GitHub Pages</a>.</li>
 </ul>
-<p>Pronto!! 😁, agora tenho o <strong>Hugo</strong> configurado, agora usando o terminal com o comando <code>hugo build</code> o site sera gerado. Com isso basta fazer dois commits, uma no repositório privado e outra no repositório publico.</p>
+<p>Pronto!! 😁, agora tenho o <strong>Hugo</strong> configurado, basta abrir o terminal e usar o comando <code>hugo build</code> que o site sera gerado. Com isso basta fazer dois commits, uma no repositório privado e outra no repositório publico.</p>
+<p>O processo manual de gerar o site com o comando <em>Hugo</em>** e depois fazer o commit nos dois repositórios funciona, mas pode ser otimizado. Na parte 2 veremos continuarei com a configuração do <strong>Meu Blog</strong> com <strong>Workflow GitHub Actions</strong> e <strong>Google Analytics</strong>.</p>
 
       </div>
 
@@ -392,7 +392,7 @@ Dito isto, vamos para a <a href="https://go.dev/doc/install"  class="external-li
 
   
   
-  <script src="/js/coder.js"></script>
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
   
 
   
