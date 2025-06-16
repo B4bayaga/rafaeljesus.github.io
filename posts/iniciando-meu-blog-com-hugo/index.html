@@ -186,9 +186,9 @@
   </a>
 </h1>
 <p>Para começar, qual tecnologia usar para construir e publicar o <strong>Meu Blog</strong>?</p>
-<p>A resposta para essa pergunta foi francamente difícil devido a vasta quantidade de opções existentes. E logo de cara, pensei em construir com ferramentas que &ldquo;domino&rdquo; (na data que escrevo este artigo), que são <a href="https://www.python.org/"  class="external-link" target="_blank" rel="noopener">Python</a> com <a href="https://www.djangoproject.com/"  class="external-link" target="_blank" rel="noopener">Django</a>, depois obviamente pensei em <a href="https://wordpress.org/"  class="external-link" target="_blank" rel="noopener">Wordpress</a>, <a href="https://plone.org/"  class="external-link" target="_blank" rel="noopener">Plone</a> entre outras. Passei uma semana inteira apenas para escolher que tecnologia usar, e foi quando vi um post do <a href="https://github.com/akitaonrails"  class="external-link" target="_blank" rel="noopener">Fabio Akita</a>, no post, ele descrevia como foi migrar o seu blog <a href="https://akitaonrails.com/"  class="external-link" target="_blank" rel="noopener">AkitaOnRails</a>, salve engano escrito em <a href="https://rubyonrails.org/"  class="external-link" target="_blank" rel="noopener">Rails</a>, para usar o <strong>Hugo</strong>.</p>
+<p>A resposta para essa pergunta foi francamente difícil devido à vasta quantidade de opções existentes. E logo de cara, pensei em construir com ferramentas que &ldquo;domino&rdquo; (na data que escrevo este artigo), que são <a href="https://www.python.org/"  class="external-link" target="_blank" rel="noopener">Python</a> com <a href="https://www.djangoproject.com/"  class="external-link" target="_blank" rel="noopener">Django</a>, depois obviamente pensei em <a href="https://wordpress.org/"  class="external-link" target="_blank" rel="noopener">Wordpress</a>, <a href="https://plone.org/"  class="external-link" target="_blank" rel="noopener">Plone</a> entre outras. Passei uma semana inteira apenas para escolher que tecnologia usar, e foi quando vi um post do <a href="https://github.com/akitaonrails"  class="external-link" target="_blank" rel="noopener">Fabio Akita</a>, no post, ele descrevia como foi migrar o seu blog <a href="https://akitaonrails.com/"  class="external-link" target="_blank" rel="noopener">AkitaOnRails</a>, salvo engano escrito em <a href="https://rubyonrails.org/"  class="external-link" target="_blank" rel="noopener">Rails</a>, para usar o <strong>Hugo</strong>.</p>
 <p>Mas que diabos é <strong>Hugo</strong>? 🤔</p>
-<p>Pois bem, fui pesquisar e descobrir que <strong>Hugo</strong> é um software de código aberto escrito em <a href="https://go.dev/"  class="external-link" target="_blank" rel="noopener">Go</a> utilizado para gerar <strong>sites estáticos</strong> com a promessa de ser &ldquo;extremamente rápido&rdquo; e &ldquo;eficiente&rdquo;. Ele é usado para construir diversos tipos de sites, mas é especialmente popular na criação de <em>Blogs</em>, <em>Sites de Documentação</em>, <em>Portfólios Pessoais ou Profissionais</em>, etc&hellip;</p>
+<p>Pois bem, fui pesquisar e descobri que <strong>Hugo</strong> é um software de código aberto escrito em <a href="https://go.dev/"  class="external-link" target="_blank" rel="noopener">Go</a> utilizado para gerar <strong>sites estáticos</strong> com a promessa de ser &ldquo;extremamente rápido&rdquo; e &ldquo;eficiente&rdquo;. Ele é usado para construir diversos tipos de sites, mas é especialmente popular na criação de <em>Blogs</em>, <em>Sites de Documentação</em>, <em>Portfólios Pessoais ou Profissionais</em>, etc&hellip;</p>
 <p>Entre as vantagens que o <strong>Hugo</strong> traz por padrão, como escrita em <em>Markdown</em> e uma vasta quantidade de <em><strong>Themes</strong></em>, o que mais me chamou atenção, foi a possibilidade de hospedar o <strong>Meu Blog</strong> no <strong>Github Pages</strong> totalmente <strong>free</strong>, o que para a natureza do projeto se encaixa como uma luva.</p>
 <p>Mas, do que vou precisar? 🧐</p>
 <p>Bom, para começar acessei a documentação do <a href="https://gohugo.io/documentation/"  class="external-link" target="_blank" rel="noopener"><strong>Hugo</strong></a>, e descobri que não tem como digitar um <code>sudo apt install hugo</code> e pronto, é só sair digitando loucamente, então resolvi fazer um checklist:</p>
@@ -207,31 +207,31 @@
     <span class="sr-only">Link para o cabeçalho</span>
   </a>
 </h2>
-<p>Antes de seguir com a instalação da linguagem de programação <strong>GO</strong>, devo explicar que uso o sistema operacional <a href="https://www.linux.org/"  class="external-link" target="_blank" rel="noopener">Linux</a> na distribuição <a href="https://system76.com/"  class="external-link" target="_blank" rel="noopener">Pop!_OS</a>, por tanto, todo processo de instalação e configuração se baseiam nessa configuração de sistema operacional.
-Dito isto, vamos para a <a href="https://go.dev/doc/install"  class="external-link" target="_blank" rel="noopener">documentação</a> oficial do <strong>GO</strong>, que pede para rodar o comando:</p>
+<p>Antes de seguir com a instalação da linguagem de programação <strong>GO</strong>, devo explicar que uso o sistema operacional <a href="https://www.linux.org/"  class="external-link" target="_blank" rel="noopener">Linux</a> na distribuição <a href="https://system76.com/"  class="external-link" target="_blank" rel="noopener">Pop!_OS</a>, portanto, todo processo de instalação e configuração se baseiam nessa configuração de sistema operacional.
+Dito isso, vamos para a <a href="https://go.dev/doc/install"  class="external-link" target="_blank" rel="noopener">documentação</a> oficial do <strong>GO</strong>, que pede para rodar o comando:</p>
 <p><code>rm -rf /usr/local/go &amp;&amp; tar -C /usr/local -xzf go1.24.4.linux-amd64.tar.gz</code></p>
 <p>Esse comando remove qualquer instalação anterior do <strong>GO</strong>, exclui a pasta <code>/usr/local/go</code> (caso exista), depois baixa e extrai o arquivo <code>*.tar.gz</code>, na sequencia criando uma nova árvore de diretórios do Go em <code>/usr/local/go</code>.</p>
 <p>Agora adicionamos o caminho do binário na variável de ambiente do sistema com o comando:</p>
 <p><code>export PATH=$PATH:/usr/local/go/bin</code></p>
 <p>Agora basta digitar ainda no terminal basta digitar:</p>
 <p><code>go version</code></p>
-<p>A saída dever conter a versão do <strong>GO</strong>, o que mostra que foi instalado com sucesso.</p>
+<p>A saída deverá conter a versão do <strong>GO</strong>, o que mostra que foi instalado com sucesso.</p>
 <ul>
 <li><input checked="" disabled="" type="checkbox"> Instalar a linguagem <a href="https://go.dev/"  class="external-link" target="_blank" rel="noopener">Go</a>.</li>
 </ul>
-<h2 id="intalando-o-hugo-">
-  Intalando o Hugo. 💾
-  <a class="heading-link" href="#intalando-o-hugo-">
+<h2 id="instalando-o-hugo-">
+  Instalando o Hugo. 💾
+  <a class="heading-link" href="#instalando-o-hugo-">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link para o cabeçalho"></i>
     <span class="sr-only">Link para o cabeçalho</span>
   </a>
 </h2>
-<p>Agora voltamos à documentação do <a href="https://gohugo.io/installation/linux/"  class="external-link" target="_blank" rel="noopener"><strong>Hugo</strong></a>. Aqui um parentese, a documentação orienta instalar via <strong>snap</strong>, porém, optei pela instalação via <a href="https://github.com/gohugoio/hugo?tab=readme-ov-file"  class="external-link" target="_blank" rel="noopener">GitHub</a>, mais precisamente a versão <em><strong>extended edition</strong></em>. O primeiro motivo é que alguns temas do <strong>Hugo</strong> exigem versão <strong>extended</strong>, o outro motivo é simplesmente por que eu quis. 😩</p>
+<p>Agora voltamos à documentação do <a href="https://gohugo.io/installation/linux/"  class="external-link" target="_blank" rel="noopener"><strong>Hugo</strong></a>. Aqui um parêntese, a documentação orienta instalar via <strong>snap</strong>, porém, optei pela instalação via <a href="https://github.com/gohugoio/hugo?tab=readme-ov-file"  class="external-link" target="_blank" rel="noopener">GitHub</a>, mais precisamente a versão <em><strong>extended edition</strong></em>. O primeiro motivo é que alguns temas do <strong>Hugo</strong> exigem versão <strong>extended</strong>, o outro é simplesmente porque eu quis. 😩</p>
 <p>Continuando, no terminal rode o comando:</p>
 <p><code>CGO_ENABLED=1 go install -tags extended github.com/gohugoio/hugo@latest</code></p>
 <p>Para testar se tudo ocorreu bem rode:</p>
 <p><code>hugo version</code></p>
-<p>Mais uma vês, a saída sendo a versão do <strong>Hugo</strong>, tudo ocerreu bem.</p>
+<p>Mais uma vez, a saída sendo a versão do <strong>Hugo</strong>, tudo ocorreu bem.</p>
 <ul>
 <li><input checked="" disabled="" type="checkbox"> Instalar o <a href="https://gohugo.io/"  class="external-link" target="_blank" rel="noopener">Hugo</a>.</li>
 </ul>
@@ -242,7 +242,7 @@ Dito isto, vamos para a <a href="https://go.dev/doc/install"  class="external-li
     <span class="sr-only">Link para o cabeçalho</span>
   </a>
 </h2>
-<p>Criei dois repositórios no GitHub, um privado para hospedar o código fonte do <strong>Meu Blog</strong> e outro repositório <strong>público</strong> para configurar posteriormente o GitHub Pages e torná-lo público para o mundo.</p>
+<p>Criei dois repositórios no GitHub, um privado para hospedar o código-fonte do <strong>Meu Blog</strong> e outro repositório <strong>público</strong> para configurar posteriormente o GitHub Pages e torná-lo público para o mundo.</p>
 <p>A ideia é organizar o meu projeto de forma mais eficiente. Pense nisso como ter duas pastas interligadas:</p>
 <ol>
 <li>Uma pasta privada onde guardarei todo o &ldquo;esqueleto&rdquo; e o conteúdo bruto do <strong>Meu Blog</strong> e arquivos de configuração do Hugo.</li>
@@ -250,7 +250,7 @@ Dito isto, vamos para a <a href="https://go.dev/doc/install"  class="external-li
 </ol>
 <p>Para <strong>&ldquo;conectar&rdquo;</strong> as duas, vamos usar um recurso do Git chamado submódulo. Configuraremos o repositório público que chamei de  <code>rafaeljesus.github.io</code> (onde o Hugo irá gerar o <strong>Meu Blog</strong>), para ser um submódulo dentro do nosso projeto privado. Este submódulo será &ldquo;montado&rdquo; no diretório <code> public/</code>, que é exatamente onde o Hugo gera e armazena a versão final do site/blog.</p>
 <p>Em resumo: O repositório principal e privado conterá o código-fonte, enquanto a subpasta <code>public/</code> será um clone direto e atualizável do repositório público, mantendo tudo sincronizado e organizado.</p>
-<p>Uma vês definido e explicado a estrutura do <strong>Meu Blog</strong> vamos para o terminal. Clonamos o repositório privado com o comando:</p>
+<p>Uma vez definido e explicado a estrutura do <strong>Meu Blog</strong> vamos para o terminal. Clonamos o repositório privado com o comando:</p>
 <p><code>git clone https://github.com/meu-id/meu-repositorio.git</code></p>
 <p>Agora, criamos o projeto com <strong>Hugo</strong> usando o comando abaixo:</p>
 <p><code>hugo new site meu-repositorio --force</code></p>
@@ -269,7 +269,7 @@ Dito isto, vamos para a <a href="https://go.dev/doc/install"  class="external-li
   </a>
 </h2>
 <p>Outro ponto interessante do Hugo é a quantidade de <strong>Temas (<a href="https://themes.gohugo.io/"  class="external-link" target="_blank" rel="noopener">Themes</a>)</strong>, páginas prontas de fácil configuração, personalização e a grande maioria com boa documentação. Após escolha do <strong>Tema</strong> e ler a documentação do mesmo, seguimos no terminal para realizar a instalação.</p>
-<p>Dentro do diretório privado, aquele que contem o código <strong>&ldquo;bruto&rdquo;</strong> do projeto, criarei novamente um submodulo com <strong>Git</strong>, só que agora clonando o <strong>Tema(Them)</strong> dentro do diretório <code>themes/</code> com o comando abaixo:</p>
+<p>Dentro do diretório privado, aquele que contém o código <strong>&ldquo;bruto&rdquo;</strong> do projeto, criarei novamente um submodulo com <strong>Git</strong>, só que agora clonando o <strong>Tema(Them)</strong> dentro do diretório <code>themes/</code> com o comando abaixo:</p>
 <p><code> git submodule add https://github.com/luizdepra/hugo-coder.git themes/hugo-coder</code></p>
 <p><strong>Ok 👌</strong>, agora vou configurar o <strong>Theme</strong> no arquivo <code>hugo.toml</code> no nosso diretório principal.</p>
 <p>No <strong>GitHub</strong> do <strong>Theme</strong> que escolhi, tem um exemplo de arquivo <code>hugo.toml</code>, são as <a href="https://github.com/luizdepra/hugo-coder/blob/main/docs/configurations.md#complete-example"  class="external-link" target="_blank" rel="noopener">configurações mínimas</a> para que ele funcione, basta copiar e colar no arquivo <code>hugo.toml</code> do seu projeto, substituir metadados pessoas, como por exemplo <code>baseURL,title</code>.</p>
@@ -286,8 +286,8 @@ Dito isto, vamos para a <a href="https://go.dev/doc/install"  class="external-li
     <span class="sr-only">Link para o cabeçalho</span>
   </a>
 </h2>
-<p>Antes de configurar o <strong>GitHub Pages</strong> é muito importante configurar o <strong>DNS</strong>. Leve em consideração que tenho um <strong>Domínio</strong> hospedado, geralmente uso o <strong>DNS</strong> da <a href="https://www.cloudflare.com/"  class="external-link" target="_blank" rel="noopener">CloudFare</a>, mas para esse projeto usarei o <strong>DNS</strong> do <a href="https://www.registro.br/"  class="external-link" target="_blank" rel="noopener">registro.br</a>, aqui estou assumindo que o <strong>GitHub Pages</strong> tem um mínimo de projetação contra ataques <a href="https://en.wikipedia.org/wiki/Denial-of-service_attack"  class="external-link" target="_blank" rel="noopener">DoS attack</a>.</p>
-<p>Dentro das configurações do meu <strong>Domínio</strong>, acesso &ldquo;<em><strong>configurar zona DNS</strong></em>&rdquo; e seguindo a <a href="https://docs.github.com/pt/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages#using-an-apex-domain-for-your-github-pages-site"  class="external-link" target="_blank" rel="noopener">documentação</a> do <strong>GitHub Pages</strong> e crio 4 entradas do &ldquo;<strong>Tipo A</strong>&rdquo;, deixo o segundo campo(nome) em branco e aponto para os <strong><a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site"  class="external-link" target="_blank" rel="noopener">IPs do GitHub Pages</a></strong>. Agora crio uma outra entrada do &ldquo;<strong>Tipo CNAME</strong>&rdquo;, no campo &ldquo;<strong>name</strong>&rdquo;, preencho com &ldquo;<strong>www</strong>&rdquo; e por ultimo aponto para o domínio do meu <strong>GitHub</strong>, esse domínio é formado pelo nome do seu usuário seguido de <strong>.github.io</strong>.</p>
+<p>Antes de configurar o <strong>GitHub Pages</strong> é muito importante configurar o <strong>DNS</strong>. Leve em consideração que tenho um <strong>Domínio</strong> hospedado, geralmente uso o <strong>DNS</strong> da <a href="https://www.cloudflare.com/"  class="external-link" target="_blank" rel="noopener">Cloudflare</a>, mas para esse projeto usarei o <strong>DNS</strong> do <a href="https://www.registro.br/"  class="external-link" target="_blank" rel="noopener">registro.br</a>, aqui estou assumindo que o <strong>GitHub Pages</strong> tem um mínimo de proteção contra ataques de negação de serviço <a href="https://en.wikipedia.org/wiki/Denial-of-service_attack"  class="external-link" target="_blank" rel="noopener">DoS attack</a>.</p>
+<p>Dentro das configurações do meu <strong>Domínio</strong>, acesso &ldquo;<em><strong>configurar zona DNS</strong></em>&rdquo; e seguindo a <a href="https://docs.github.com/pt/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages#using-an-apex-domain-for-your-github-pages-site"  class="external-link" target="_blank" rel="noopener">documentação</a> do <strong>GitHub Pages</strong> e crio 4 entradas do &ldquo;<strong>Tipo A</strong>&rdquo;, deixo o segundo campo(nome) em branco e aponto para os <strong><a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site"  class="external-link" target="_blank" rel="noopener">IPs do GitHub Pages</a></strong>. Em seguida, criei outra entrada,desta vez do &ldquo;<strong>Tipo CNAME</strong>&rdquo;. No campo &ldquo;<strong>name</strong>&rdquo;, preenchi com &ldquo;<strong>www</strong>&rdquo; e, por último, apontei para o domínio do meu <strong>GitHub</strong>, esse domínio é formado pelo nome do seu usuário seguido de <strong>.github.io</strong>.</p>
 <p><img src="/images/print_conf_dns.png" alt="Print imagem DNS"></p>
 <p>Agora tenho que esperar as configurações se propagarem pelo mundo, esse tempo pode variar bastante.</p>
 <ul>
@@ -306,7 +306,7 @@ Dito isto, vamos para a <a href="https://go.dev/doc/install"  class="external-li
 <div style="text-align: center;">
   <img src="/images/print_github_pages.png" alt="Imagem Print menu Pages do GitHub" width="auto">
 </div>
-<p>No menu do <strong>GitHub Pages</strong> em <code>Source</code> selecione <code>Deploy from branch</code>, mais abaixo em <code>Brach</code> escolha <code>Main</code> e depois o diretório <code>/(root)</code>.</p>
+<p>No menu do <strong>GitHub Pages</strong> em <code>Source</code> selecione <code>Deploy from branch</code>, mais abaixo em <code>Branch</code> escolha <code>Main</code> e depois o diretório <code>/(root)</code>.</p>
 <p><img src="/images/print_deploy_branch.png" alt="Print menu deploy com Branch"></p>
 <p>Por fim, em <code>Custom Domain</code> digite o seu domínio, clique em <code>Save</code> e aguarde o <strong>GitHub</strong> checar e validar a configuração.</p>
 <ul>
