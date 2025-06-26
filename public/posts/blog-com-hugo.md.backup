@@ -1,0 +1,126 @@
++++ 
+draft = true
+date = 2025-06-10T10:21:35-03:00
+title = "Dando Vida ao Meu Blog"
+description = "Um Guia Prático com Hugo"
+slug = "iniciando-meu-blog-com-hugo"
+authors = ["Rafael Jesus"]
+tags = []
+categories = ["Tutoriais"]
+externalLink = ""
+series = []
+#featuredImage = "/images/hugo_server.png"
++++
+# <center>Dando Vida ao Meu Blog: Um Guia Prático com [Hugo](https://gohugo.io/)</center>
+
+Para começar, qual tecnologia usar para construir e publicar o **Meu Blog**?
+
+A resposta para essa pergunta foi francamente difícil devido a vasta quantidade de opções existentes. E logo de cara, pensei em construir com ferramentas que "domino" (na data que escrevo este artigo), que são [Python](https://www.python.org/) com [Django](https://www.djangoproject.com/), depois obviamente pensei em [Wordpress](https://wordpress.org/), [Plone](https://plone.org/) entre outras. Passei uma semana inteira apenas para escolher que tecnologia usar, e foi quando vi um post do [Fabio Akita](https://github.com/akitaonrails), no post, ele descrevia como foi migrar o seu blog [AkitaOnRails](https://akitaonrails.com/), salve engano escrito em [Rails](https://rubyonrails.org/), para usar o **Hugo**.
+
+Mas, que diabos é **Hugo**? 🤔
+
+Pois bem, fui pesquisar e descobrir que **Hugo** é um software de código aberto escrito em [Go](https://go.dev/) utilizado para gerar **sites estáticos** com a promessa de ser "extremamente rápido" e "eficiente". Ele é usado para construir diversos tipos de sites, mas é especialmente popular na criação de *Blogs*, *Sites de Documentação*, *Portfólios Pessoais ou Profissionais*, etc...
+
+Entre as vantagens que o **Hugo** traz por padrão, como escrita em *Markdown* e uma vasta quantidade de ***Themes***, o que mais me chamou atenção, foi a possibilidade de hospedar o **Meu Blog** no **Github Pages** totalmente **free**, o que para a natureza do projeto se encaixa como uma luva.
+
+Mas, do que vou precisar? 🧐
+
+Bom, para começar acessei a documentação do [**Hugo**](https://gohugo.io/documentation/), e descobri que não tem como digitar um `sudo apt install hugo` e pronto, é só sair digitando loucamente, então resolvi fazer um checklist:
+
+- [ ] 	Instalar a linguagem [Go](https://go.dev/).
+- [ ] 	Instalar o [Hugo](https://gohugo.io/).
+- [ ] 	Configurar o repositório no [GitHub](https://github.com/B4bayaga/rafaeljesus.github.io).
+- [ ] 	Instalar o [Theme](https://themes.gohugo.io/themes/hugo-coder/).
+- [ ] 	Configurar DNS do Domínio.
+- [ ] 	Configurar o [GitHub Pages](https://pages.github.com/).
+- [ ] 	Configurar Workflow [GitHub Actions](https://github.com/features/actions).
+
+## Instalando a linguagem [Go](https://go.dev/). 💽
+
+Antes de seguir com a instalação da linguagem de programação **GO**, devo explicar que uso o sistema operacional [Linux](https://www.linux.org/) na distribuição [Pop!_OS](https://system76.com/), por tanto, todo processo de instalação e configuração se baseiam nessa configuração de sistema operacional.
+Dito isto, vamos para a [documentação](https://go.dev/doc/install) oficial do **GO**, que pede para rodar o comando:
+
+``` rm -rf /usr/local/go && tar -C /usr/local -xzf go1.24.4.linux-amd64.tar.gz ```
+
+Esse comando remove qualquer instalação anterior do **GO**, exclui a pasta ` /usr/local/go ` (caso exista), depois baixa e extrai o arquivo ` *.tar.gz `, na sequencia criando uma nova árvore de diretórios do Go em ` /usr/local/go `.
+
+Agora adicionamos o caminho do binário na variável de ambiente do sistema com o comando:
+
+` export PATH=$PATH:/usr/local/go/bin `
+
+Agora basta digitar ainda no terminal basta digitar:
+
+ ` go version `
+ 
+A saída dever conter a versão do **GO**, o que mostra que foi instalado com sucesso.
+
+- [x] 	Instalar a linguagem [Go](https://go.dev/).
+
+## Intalando o Hugo. 💾
+
+Agora voltamos à documentação do [**Hugo**](https://gohugo.io/installation/linux/). Aqui um parentese, a documentação orienta instalar via **snap**, porém, optei pela instalação via [GitHub](https://github.com/gohugoio/hugo?tab=readme-ov-file), mais precisamente a versão ***extended edition***. O primeiro motivo é que alguns temas do **Hugo** exigem versão **extended**, o outro motivo é simplesmente por que eu quis. 😩
+
+Continuando, no terminal rode o comando:
+
+``` CGO_ENABLED=1 go install -tags extended github.com/gohugoio/hugo@latest ```
+
+Para testar se tudo ocorreu bem rode:
+
+``` hugo version ```
+
+Mais uma vês, a saída sendo a versão do **Hugo**, tudo ocerreu bem.
+
+- [x] 	Instalar o [Hugo](https://gohugo.io/).
+
+## Configurar o repositório no [GitHub](https://github.com/B4bayaga/rafaeljesus.github.io). 💻
+
+Criei dois repositórios no GitHub, um privado para hospedar o código fonte do **Meu Blog** e outro repositório **público** para configurar posteriormente o GitHub Pages e torná-lo público para o mundo.
+
+A ideia é organizar o meu projeto de forma mais eficiente. Pense nisso como ter duas pastas interligadas:
+
+1. Uma pasta privada onde guardarei todo o "esqueleto" e o conteúdo bruto do **Meu Blog** e arquivos de configuração do Hugo.
+2. Uma pasta pública, que fica dentro da primeira, contendo apenas o site pronto para ser publicado na internet.
+
+Para **"conectar"** as duas, vamos usar um recurso do Git chamado submódulo. Configuraremos o repositório público que chamei de  ` rafaeljesus.github.io ` (onde o Hugo irá gerar o **Meu Blog**), para ser um submódulo dentro do nosso projeto privado. Este submódulo será "montado" no diretório ` public/`, que é exatamente onde o Hugo gera e armazena a versão final do site/blog.
+
+Em resumo: O repositório principal e privado conterá o código-fonte, enquanto a subpasta ` public/ ` será um clone direto e atualizável do repositório público, mantendo tudo sincronizado e organizado.
+
+Uma vês definido e explicado a estrutura do **Meu Blog** vamos para o terminal. Clonamos o repositório privado com o comando:
+
+` git clone https://github.com/meu-id/meu-repositorio.git `
+
+Agora, criamos o projeto com **Hugo** usando o comando abaixo:
+
+` hugo new site meu-repositorio --force `
+
+A *flag* ` --force ` força o **Hugo** a criar o site em um diretório existente, no meu caso o repositório privado que clonei anteriormente.
+
+Agora, com o comando ` cd meu-repositorio `, entramos no diretório do repositório e criamos um **submódulo** do git, clonando o **repositório publico** e nomeando o diretório como ` public/ `, conforme a explicação anterior, isso tudo usando o comando a seguir:
+
+` git submodule add https://github.com/meu-id/meu-repositorio.git public `
+
+Com isso temos a estrutura de diretórios pronta e repositórios devidamente clonados para versionamento, publicação, etc... do projeto.
+
+- [x] 	Configurar o repositório no [GitHub](https://github.com/B4bayaga/rafaeljesus.github.io).
+
+## Instalar o [Theme](https://themes.gohugo.io/themes/hugo-coder/). 🎀
+
+Outro ponto interessante do Hugo é a quantidade de **Temas ([Themes](https://themes.gohugo.io/))**, páginas prontas de fácil configuração, personalização e a grande maioria com boa documentação. Após escolha do **Tema** e ler a documentação do mesmo, seguimos no terminal para realizar a instalação.
+
+Dentro do diretório privado, aquele que contem o código **"bruto"** do projeto, criarei novamente um submodulo com **Git**, só que agora clonando o **Tema(Them)** dentro do diretório ` themes/ ` com o comando abaixo:
+
+`  git submodule add https://github.com/luizdepra/hugo-coder.git themes/hugo-coder `  
+
+**Ok 👌**, agora vou configurar o **Theme** no arquivo ` hugo.toml ` no nosso diretório principal.
+
+No **GitHub** do **Theme** que escolhi, tem um exemplo de arquivo ` hugo.toml `, são as [configurações mínimas](https://github.com/luizdepra/hugo-coder/blob/main/docs/configurations.md#complete-example) para que ele funcione, basta copiar e colar no arquivo ` hugo.toml ` do seu projeto, substituir metadados pessoas, como por exemplo ` baseURL,title `.
+
+Pronto, com o arquivo ` hugo.toml ` configurado é hora de subir o **Hugo** localmente com o comando abaixo e verificar se tudo deu certo:
+
+` hugo server `
+
+![Print imagem terminal rodando comando hugo server](/images/hugo_server.png)
+
+- [x] 	Instalar o [Theme](https://themes.gohugo.io/themes/hugo-coder/).
+
+## Configurar DNS do Domínio. 
