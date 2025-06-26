@@ -29,9 +29,8 @@
   <meta property="og:locale" content="pt_br">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-06-10T10:21:35-03:00">
-    <meta property="article:modified_time" content="2025-06-10T10:21:35-03:00">
-      <meta property="og:see_also" content="http://localhost:1313/posts/iniciando-meu-blog-com-hugo-pt-2/">
+    <meta property="article:published_time" content="2025-06-26T10:21:35-03:00">
+    <meta property="article:modified_time" content="2025-06-26T10:21:35-03:00">
 
 
 
@@ -156,8 +155,8 @@
           <div class="date">
             <span class="posted-on">
               <i class="fa-solid fa-calendar" aria-hidden="true"></i>
-              <time datetime="2025-06-10T10:21:35-03:00">
-                junho 10, 2025
+              <time datetime="2025-06-26T10:21:35-03:00">
+                junho 26, 2025
               </time>
             </span>
             <span class="reading-time">
@@ -179,13 +178,14 @@
 
       <div class="post-content">
         
-        <h1 id="dando-vida-ao-meu-blog-um-guia-prático-com-hugo-pt-1">
-  <center>Dando Vida ao Meu Blog: Um Guia Prático com <a href="https://gohugo.io/"  class="external-link" target="_blank" rel="noopener">Hugo</a> (Pt-1)</center>
-  <a class="heading-link" href="#dando-vida-ao-meu-blog-um-guia-pr%c3%a1tico-com-hugo-pt-1">
+        <h1 id="dando-vida-ao-meu-blog-um-guia-prático-com-hugo">
+  <center>Dando Vida ao Meu Blog: Um Guia Prático com <a href="https://gohugo.io/"  class="external-link" target="_blank" rel="noopener">Hugo</a></center>
+  <a class="heading-link" href="#dando-vida-ao-meu-blog-um-guia-pr%c3%a1tico-com-hugo">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link para o cabeçalho"></i>
     <span class="sr-only">Link para o cabeçalho</span>
   </a>
 </h1>
+<p>Hoje dou inicio a um projeto pessoal que visa registrar meu aprendizado na área de programação, e para isso, criei um blog pessoal. Ideia inovadora? Não! Mas o processo de escrever me ajuda a fixar o que aprendi e também serve de registro para consultas futuras, sem falar que pode vir a ajudar outras pessoas.</p>
 <p>Para começar, qual tecnologia usar para construir e publicar o <strong>Meu Blog</strong>?</p>
 <p>A resposta para essa pergunta foi francamente difícil devido à vasta quantidade de opções existentes. E logo de cara, pensei em construir com ferramentas que &ldquo;domino&rdquo; (na data que escrevo este artigo), que são <a href="https://www.python.org/"  class="external-link" target="_blank" rel="noopener">Python</a> com <a href="https://www.djangoproject.com/"  class="external-link" target="_blank" rel="noopener">Django</a>, depois obviamente pensei em <a href="https://wordpress.org/"  class="external-link" target="_blank" rel="noopener">Wordpress</a>, <a href="https://plone.org/"  class="external-link" target="_blank" rel="noopener">Plone</a> entre outras. Passei uma semana inteira apenas para escolher que tecnologia usar, e foi quando vi um post do <a href="https://github.com/akitaonrails"  class="external-link" target="_blank" rel="noopener">Fabio Akita</a>, no post, ele descrevia como foi migrar o seu blog <a href="https://akitaonrails.com/"  class="external-link" target="_blank" rel="noopener">AkitaOnRails</a>, salvo engano escrito em <a href="https://rubyonrails.org/"  class="external-link" target="_blank" rel="noopener">Rails</a>, para usar o <strong>Hugo</strong>.</p>
 <p>Mas que diabos é <strong>Hugo</strong>? 🤔</p>
@@ -200,6 +200,9 @@
 <li><input disabled="" type="checkbox"> Instalar o <a href="https://themes.gohugo.io/themes/hugo-coder/"  class="external-link" target="_blank" rel="noopener">Theme</a>.</li>
 <li><input disabled="" type="checkbox"> Configurar DNS do Domínio.</li>
 <li><input disabled="" type="checkbox"> Configurar o <a href="https://pages.github.com/"  class="external-link" target="_blank" rel="noopener">GitHub Pages</a>.</li>
+<li><input disabled="" type="checkbox"> Criando <a href="https://docs.github.com/en/actions/writing-workflows/quickstart"  class="external-link" target="_blank" rel="noopener">Workflow GitHub Actions</a>.</li>
+<li><input disabled="" type="checkbox"> Indexa página com <a href="https://search.google.com/search-console/welcome?hl=pt-BR"  class="external-link" target="_blank" rel="noopener">Google Search Console</a>.</li>
+<li><input disabled="" type="checkbox"> Configurar rastreamento com <a href="https://developers.google.com/analytics?hl=pt-br"  class="external-link" target="_blank" rel="noopener">Google Analytics</a>.</li>
 </ul>
 <h2 id="instalando-a-linguagem-go-">
   Instalando a linguagem <a href="https://go.dev/"  class="external-link" target="_blank" rel="noopener">Go</a>. 💽
@@ -214,8 +217,9 @@ Dito isso, vamos para a <a href="https://go.dev/doc/install"  class="external-li
 <p>Esse comando remove qualquer instalação anterior do <strong>GO</strong>, exclui a pasta <code>/usr/local/go</code> (caso exista), depois baixa e extrai o arquivo <code>*.tar.gz</code>, na sequencia criando uma nova árvore de diretórios do Go em <code>/usr/local/go</code>.</p>
 <p>Agora adicionamos o caminho do binário na variável de ambiente do sistema com o comando:</p>
 <p><code>export PATH=$PATH:/usr/local/go/bin</code></p>
-<p>Agora basta digitar ainda no terminal basta digitar:</p>
+<p>Ainda no terminal basta digitar:</p>
 <p><code>go version</code></p>
+<p><img src="/images/um_guia_pratico_com_hugo/go_version.png" alt="Imagem Print go version"></p>
 <p>A saída deverá conter a versão do <strong>GO</strong>, o que mostra que foi instalado com sucesso.</p>
 <ul>
 <li><input checked="" disabled="" type="checkbox"> Instalar a linguagem <a href="https://go.dev/"  class="external-link" target="_blank" rel="noopener">Go</a>.</li>
@@ -232,6 +236,7 @@ Dito isso, vamos para a <a href="https://go.dev/doc/install"  class="external-li
 <p><code>CGO_ENABLED=1 go install -tags extended github.com/gohugoio/hugo@latest</code></p>
 <p>Para testar se tudo ocorreu bem rode:</p>
 <p><code>hugo version</code></p>
+<p><img src="/images/um_guia_pratico_com_hugo/hugo_version.png" alt="Imagem Print hugo version"></p>
 <p>Mais uma vez, a saída sendo a versão do <strong>Hugo</strong>, tudo ocorreu bem.</p>
 <ul>
 <li><input checked="" disabled="" type="checkbox"> Instalar o <a href="https://gohugo.io/"  class="external-link" target="_blank" rel="noopener">Hugo</a>.</li>
@@ -243,22 +248,13 @@ Dito isso, vamos para a <a href="https://go.dev/doc/install"  class="external-li
     <span class="sr-only">Link para o cabeçalho</span>
   </a>
 </h2>
-<p>Criei dois repositórios no GitHub, um privado para hospedar o código-fonte do <strong>Meu Blog</strong> e outro repositório <strong>público</strong> para configurar posteriormente o GitHub Pages e torná-lo público para o mundo.</p>
-<p>A ideia é organizar o meu projeto de forma mais eficiente. Pense nisso como ter duas pastas interligadas:</p>
-<ol>
-<li>Uma pasta privada onde guardarei todo o &ldquo;esqueleto&rdquo; e o conteúdo bruto do <strong>Meu Blog</strong> e arquivos de configuração do Hugo.</li>
-<li>Uma pasta pública, que fica dentro da primeira, contendo apenas o site pronto para ser publicado na internet.</li>
-</ol>
-<p>Para <strong>&ldquo;conectar&rdquo;</strong> as duas, vamos usar um recurso do Git chamado submódulo. Configuraremos o repositório público que chamei de  <code>rafaeljesus.github.io</code> (onde o Hugo irá gerar o <strong>Meu Blog</strong>), para ser um submódulo dentro do nosso projeto privado. Este submódulo será &ldquo;montado&rdquo; no diretório <code> public/</code>, que é exatamente onde o Hugo gera e armazena a versão final do site/blog.</p>
-<p>Em resumo: O repositório principal e privado conterá o código-fonte, enquanto a subpasta <code>public/</code> será um clone direto e atualizável do repositório público, mantendo tudo sincronizado e organizado.</p>
-<p>Uma vez definido e explicado a estrutura do <strong>Meu Blog</strong> vamos para o terminal. Clonamos o repositório privado com o comando:</p>
+<p>Criei um repositório <strong>público</strong> no GitHub para configurar posteriormente o GitHub Pages e tornar o blog público para o mundo. O GitHub Pages exige que o repositório seja publico (na data dessa publicação), para publicar a página.</p>
+<p>Com o repositório criado é hora ade clonar o projeto:</p>
 <p><code>git clone https://github.com/meu-id/meu-repositorio.git</code></p>
 <p>Agora, criamos o projeto com <strong>Hugo</strong> usando o comando abaixo:</p>
 <p><code>hugo new site meu-repositorio --force</code></p>
 <p>A <em>flag</em> <code>--force</code> força o <strong>Hugo</strong> a criar o site em um diretório existente, no meu caso o repositório privado que clonei anteriormente.</p>
-<p>Agora, com o comando <code>cd meu-repositorio</code>, entramos no diretório do repositório e criamos um <strong>submódulo</strong> do git, clonando o <strong>repositório publico</strong> e nomeando o diretório como <code>public/</code>, conforme a explicação anterior, isso tudo usando o comando a seguir:</p>
-<p><code>git submodule add https://github.com/meu-id/meu-repositorio.git public</code></p>
-<p>Com isso temos a estrutura de diretórios pronta e repositórios devidamente clonados para versionamento, publicação, etc&hellip; do projeto.</p>
+<p>Com isso temos o repositório devidamente clonado para versionamento, publicação, etc&hellip; do projeto.</p>
 <ul>
 <li><input checked="" disabled="" type="checkbox"> Configurar o repositório no <a href="https://github.com/B4bayaga/rafaeljesus.github.io"  class="external-link" target="_blank" rel="noopener">GitHub</a>.</li>
 </ul>
@@ -270,13 +266,13 @@ Dito isso, vamos para a <a href="https://go.dev/doc/install"  class="external-li
   </a>
 </h2>
 <p>Outro ponto interessante do Hugo é a quantidade de <strong>Temas (<a href="https://themes.gohugo.io/"  class="external-link" target="_blank" rel="noopener">Themes</a>)</strong>, páginas prontas de fácil configuração, personalização e a grande maioria com boa documentação. Após escolha do <strong>Tema</strong> e ler a documentação do mesmo, seguimos no terminal para realizar a instalação.</p>
-<p>Dentro do diretório privado, aquele que contém o código <strong>&ldquo;bruto&rdquo;</strong> do projeto, criarei novamente um submodulo com <strong>Git</strong>, só que agora clonando o <strong>Tema(Them)</strong> dentro do diretório <code>themes/</code> com o comando abaixo:</p>
+<p>Dentro do projeto, criarei um submódulo com <strong>Git</strong>, clonando o <strong>Tema(Them)</strong> dentro do diretório <code>themes/</code> com o comando abaixo:</p>
 <p><code> git submodule add https://github.com/luizdepra/hugo-coder.git themes/hugo-coder</code></p>
 <p><strong>Ok 👌</strong>, agora vou configurar o <strong>Theme</strong> no arquivo <code>hugo.toml</code> no nosso diretório principal.</p>
 <p>No <strong>GitHub</strong> do <strong>Theme</strong> que escolhi, tem um exemplo de arquivo <code>hugo.toml</code>, são as <a href="https://github.com/luizdepra/hugo-coder/blob/main/docs/configurations.md#complete-example"  class="external-link" target="_blank" rel="noopener">configurações mínimas</a> para que ele funcione, basta copiar e colar no arquivo <code>hugo.toml</code> do seu projeto, substituir metadados pessoas, como por exemplo <code>baseURL,title</code>.</p>
 <p>Pronto, com o arquivo <code>hugo.toml</code> configurado é hora de subir o <strong>Hugo</strong> localmente com o comando abaixo e verificar se tudo deu certo:</p>
 <p><code>hugo server</code></p>
-<p><img src="/images/hugo_server.png" alt="Print imagem terminal rodando comando hugo server"></p>
+<p><img src="/images/um_guia_pratico_com_hugo/hugo_server.png" alt="Print imagem terminal rodando comando hugo server"></p>
 <ul>
 <li><input checked="" disabled="" type="checkbox"> Instalar o <a href="https://themes.gohugo.io/themes/hugo-coder/"  class="external-link" target="_blank" rel="noopener">Theme</a>.</li>
 </ul>
@@ -289,7 +285,7 @@ Dito isso, vamos para a <a href="https://go.dev/doc/install"  class="external-li
 </h2>
 <p>Antes de configurar o <strong>GitHub Pages</strong> é muito importante configurar o <strong>DNS</strong>. Leve em consideração que tenho um <strong>Domínio</strong> hospedado, geralmente uso o <strong>DNS</strong> da <a href="https://www.cloudflare.com/"  class="external-link" target="_blank" rel="noopener">Cloudflare</a>, mas para esse projeto usarei o <strong>DNS</strong> do <a href="https://www.registro.br/"  class="external-link" target="_blank" rel="noopener">registro.br</a>, aqui estou assumindo que o <strong>GitHub Pages</strong> tem um mínimo de proteção contra ataques de negação de serviço <a href="https://en.wikipedia.org/wiki/Denial-of-service_attack"  class="external-link" target="_blank" rel="noopener">DoS attack</a>.</p>
 <p>Dentro das configurações do meu <strong>Domínio</strong>, acesso &ldquo;<em><strong>configurar zona DNS</strong></em>&rdquo; e seguindo a <a href="https://docs.github.com/pt/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages#using-an-apex-domain-for-your-github-pages-site"  class="external-link" target="_blank" rel="noopener">documentação</a> do <strong>GitHub Pages</strong> e crio 4 entradas do &ldquo;<strong>Tipo A</strong>&rdquo;, deixo o segundo campo(nome) em branco e aponto para os <strong><a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site"  class="external-link" target="_blank" rel="noopener">IPs do GitHub Pages</a></strong>. Em seguida, criei outra entrada,desta vez do &ldquo;<strong>Tipo CNAME</strong>&rdquo;. No campo &ldquo;<strong>name</strong>&rdquo;, preenchi com &ldquo;<strong>www</strong>&rdquo; e, por último, apontei para o domínio do meu <strong>GitHub</strong>, esse domínio é formado pelo nome do seu usuário seguido de <strong>.github.io</strong>.</p>
-<p><img src="/images/print_conf_dns.png" alt="Print imagem DNS"></p>
+<p><img src="/images/um_guia_pratico_com_hugo/print_conf_dns.png" alt="Print imagem DNS"></p>
 <p>Agora tenho que esperar as configurações se propagarem pelo mundo, esse tempo pode variar bastante.</p>
 <ul>
 <li><input checked="" disabled="" type="checkbox"> Configurar DNS do Domínio.</li>
@@ -302,19 +298,60 @@ Dito isso, vamos para a <a href="https://go.dev/doc/install"  class="external-li
   </a>
 </h2>
 <p>Acessando o repositório publico no <strong>GitHub</strong>, segui com a configuração do <strong>GitHub Pages</strong>, clicando em <strong>Settings</strong>.</p>
-<p><img src="/images/print_setings_github.png" alt="Imagem Print menu Settings do GitHub"></p>
+<p><img src="/images/um_guia_pratico_com_hugo/print_setings_github.png" alt="Imagem Print menu Settings do GitHub"></p>
 <p>Na sequencia basta clicar em <strong>Pages</strong>.</p>
 <div style="text-align: center;">
-  <img src="/images/print_github_pages.png" alt="Imagem Print menu Pages do GitHub" width="auto">
+  <img src="/images/um_guia_pratico_com_hugo/print_github_pages.png" alt="Imagem Print menu Pages do GitHub" width="auto">
 </div>
-<p>No menu do <strong>GitHub Pages</strong> em <code>Source</code> selecione <code>Deploy from branch</code>, mais abaixo em <code>Branch</code> escolha <code>Main</code> e depois o diretório <code>/(root)</code>.</p>
-<p><img src="/images/print_deploy_branch.png" alt="Print menu deploy com Branch"></p>
+<p>No menu do <strong>GitHub Pages</strong> em <code>Source</code> selecione <code>Deploy GitHub Actions</code>.</p>
+<p><img src="/images/um_guia_pratico_com_hugo/print_deploy_actions.png" alt="Print menu deploy com Branch"></p>
 <p>Por fim, em <code>Custom Domain</code> digite o seu domínio, clique em <code>Save</code> e aguarde o <strong>GitHub</strong> checar e validar a configuração.</p>
 <ul>
 <li><input checked="" disabled="" type="checkbox"> Configurar o <a href="https://pages.github.com/"  class="external-link" target="_blank" rel="noopener">GitHub Pages</a>.</li>
 </ul>
-<p>Pronto!! 😁, agora tenho o <strong>Hugo</strong> configurado, basta abrir o terminal e usar o comando <code>hugo build</code> que o site sera gerado. Com isso basta fazer dois commits, um no repositório privado e outra no repositório publico.</p>
-<p>O processo manual de gerar o site com o comando <strong>Hugo</strong> e depois fazer o commit nos dois repositórios funciona, mas pode ser otimizado. Na parte 2 veremos continuarei com a configuração do <strong>Meu Blog</strong> com <strong>Workflow GitHub Actions</strong> e <strong>Google Analytics</strong>.</p>
+<h2 id="criando-workflow-github-actions-">
+  Criando <a href="https://docs.github.com/en/actions/writing-workflows/quickstart"  class="external-link" target="_blank" rel="noopener">Workflow GitHub Actions</a>. 🤖
+  <a class="heading-link" href="#criando-workflow-github-actions-">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link para o cabeçalho"></i>
+    <span class="sr-only">Link para o cabeçalho</span>
+  </a>
+</h2>
+<p>Esta etapa será responsável por publicar <strong>Meu Blog</strong> usando automação do <strong>GitHub Actions</strong>, e para isso o <strong>Hugo</strong> disponibiliza um <a href="https://gohugo.io/host-and-deploy/host-on-github-pages/"  class="external-link" target="_blank" rel="noopener">Workflow</a> pronto, basicamente basta da <strong>copiar e colar</strong> e pronto.</p>
+<p>Seguindo a documentação do <strong>Hugo</strong>, depois das etapas anteriores finalizadas voltamos no nosso arquivo <code>hugo.toml</code> e realizamos as configuração de cache de imagens incluído o código abaixo:</p>
+<pre tabindex="0"><code>[caches]
+  [caches.images]
+    dir = &#39;:cacheDir/images&#39; 
+</code></pre><p>Agora tenho que criar o arquivo <code>hugo.yaml</code> em um diretório chamando <code>.github/workflows</code>. Para isso usei o terminal:</p>
+<pre tabindex="0"><code>mkdir -p .github/workflows
+touch .github/workflows/hugo.yaml
+</code></pre><p>Copiei e colei o YAML disponível na <a href="https://gohugo.io/host-and-deploy/host-on-github-pages/"  class="external-link" target="_blank" rel="noopener">documentação</a> no arquivo que criei. Alterei apenas a versão do Hugo de acordo com a que estou usando e o nome do <strong>Workflow</strong>.</p>
+<p>A ideia é que sempre que fizer um <code>push</code> na <code>main</code> as alterações serão publicadas no <strong>GitHub Pages</strong>.</p>
+<p>Hora de testar!</p>
+<pre tabindex="0"><code>git add -A
+git commit -m &#34;Cria hugo.yaml&#34;
+git push
+</code></pre><p>Passou de primeira!! 😁😁</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Criando <a href="https://docs.github.com/en/actions/writing-workflows/quickstart"  class="external-link" target="_blank" rel="noopener">Workflow GitHub Actions</a>.</li>
+</ul>
+<h2 id="indexando-página-com-google-search-console-">
+  Indexando página com <a href="https://search.google.com/search-console/welcome?hl=pt-BR"  class="external-link" target="_blank" rel="noopener">Google Search Console</a>. ✍️
+  <a class="heading-link" href="#indexando-p%c3%a1gina-com-google-search-console-">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link para o cabeçalho"></i>
+    <span class="sr-only">Link para o cabeçalho</span>
+  </a>
+</h2>
+<p>Neste ponto o <strong>Meu Blog</strong> esta online e acessível. Agora quero que seja listado no buscador do google, ou seja, indexado.</p>
+<p>De acordo minha pesquisa existe opções para isso, escolhi usar a ferramenta <a href="https://search.google.com/search-console/welcome?hl=pt-BR"  class="external-link" target="_blank" rel="noopener">Google Search Console</a> obviamente do <a href="google.com" >Google</a>.</p>
+<p>Aqui é simple, no <strong>Google Search Console</strong> realizei o login com minha conta google, escolhi a opção <strong>DOMÍNIO</strong> para o google verificar se realmente sou proprietário do domínio.</p>
+<p><img src="/images/um_guia_pratico_com_hugo/google_search_console.png" alt="Print página google search console"></p>
+<p>Depois da primeira tela é hora de configurar no <strong>DNS</strong>. Seguindo orientação do <strong>Google Search Console</strong>, acesso novamente o <a href="https://www.registro.br/"  class="external-link" target="_blank" rel="noopener">registro.br</a>, depois &ldquo;<em><strong>configurar zona DNS</strong></em>&rdquo; e crio uma entrada do &ldquo;<strong>Tipo TXT</strong>&rdquo; e colo o registro que o google disponibiliza.</p>
+<p>Na tela do <strong>Google Search Console</strong> clico em verificar para que o google valide minha propriedade sobre o Domínio.</p>
+<p><img src="/images/um_guia_pratico_com_hugo/txt_google_search_console.png" alt="Print página google search console"></p>
+<p>Pronto! (O google pede para aguardar 24 horas)</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Indexa página com <a href="https://search.google.com/search-console/welcome?hl=pt-BR"  class="external-link" target="_blank" rel="noopener">Google Search Console</a>.</li>
+</ul>
 
       </div>
 

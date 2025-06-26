@@ -1,6 +1,6 @@
 +++ 
 draft = false
-date = 2025-06-10T10:21:35-03:00
+date = 2025-06-26T10:21:35-03:00
 title = "Dando Vida ao Meu Blog [Pt-1]"
 description = "Um Guia Prático com Hugo"
 slug = "iniciando-meu-blog-com-hugo-pt-1"
@@ -11,7 +11,9 @@ externalLink = ""
 series = ["Dando Vida ao Meu Blog"]
 #featuredImage = "/images/hugo_server.png"
 +++
-# <center>Dando Vida ao Meu Blog: Um Guia Prático com [Hugo](https://gohugo.io/) (Pt-1)</center>
+# <center>Dando Vida ao Meu Blog: Um Guia Prático com [Hugo](https://gohugo.io/)</center>
+
+Hoje dou inicio a um projeto pessoal que visa registrar meu aprendizado na área de programação, e para isso, criei um blog pessoal. Ideia inovadora? Não! Mas o processo de escrever me ajuda a fixar o que aprendi e também serve de registro para consultas futuras, sem falar que pode vir a ajudar outras pessoas.
 
 Para começar, qual tecnologia usar para construir e publicar o **Meu Blog**?
 
@@ -33,6 +35,9 @@ Bom, para começar acessei a documentação do [**Hugo**](https://gohugo.io/docu
 - [ ] 	Instalar o [Theme](https://themes.gohugo.io/themes/hugo-coder/).
 - [ ] 	Configurar DNS do Domínio.
 - [ ] 	Configurar o [GitHub Pages](https://pages.github.com/).
+- [ ] 	Criando [Workflow GitHub Actions](https://docs.github.com/en/actions/writing-workflows/quickstart).
+- [ ] 	Indexa página com [Google Search Console](https://search.google.com/search-console/welcome?hl=pt-BR).
+- [ ] 	Configurar rastreamento com [Google Analytics](https://developers.google.com/analytics?hl=pt-br).
 
 ## Instalando a linguagem [Go](https://go.dev/). 💽
 
@@ -47,9 +52,11 @@ Agora adicionamos o caminho do binário na variável de ambiente do sistema com 
 
 ` export PATH=$PATH:/usr/local/go/bin `
 
-Agora basta digitar ainda no terminal basta digitar:
+Ainda no terminal basta digitar:
 
  ` go version `
+
+![Imagem Print go version](/images/um_guia_pratico_com_hugo/go_version.png)
  
 A saída deverá conter a versão do **GO**, o que mostra que foi instalado com sucesso.
 
@@ -67,24 +74,17 @@ Para testar se tudo ocorreu bem rode:
 
 ``` hugo version ```
 
+![Imagem Print hugo version](/images/um_guia_pratico_com_hugo/hugo_version.png)
+
 Mais uma vez, a saída sendo a versão do **Hugo**, tudo ocorreu bem.
 
 - [x] 	Instalar o [Hugo](https://gohugo.io/).
 
 ## Configurar o repositório no [GitHub](https://github.com/B4bayaga/rafaeljesus.github.io). 💻
 
-Criei dois repositórios no GitHub, um privado para hospedar o código-fonte do **Meu Blog** e outro repositório **público** para configurar posteriormente o GitHub Pages e torná-lo público para o mundo.
+Criei um repositório **público** no GitHub para configurar posteriormente o GitHub Pages e tornar o blog público para o mundo. O GitHub Pages exige que o repositório seja publico (na data dessa publicação), para publicar a página.
 
-A ideia é organizar o meu projeto de forma mais eficiente. Pense nisso como ter duas pastas interligadas:
-
-1. Uma pasta privada onde guardarei todo o "esqueleto" e o conteúdo bruto do **Meu Blog** e arquivos de configuração do Hugo.
-2. Uma pasta pública, que fica dentro da primeira, contendo apenas o site pronto para ser publicado na internet.
-
-Para **"conectar"** as duas, vamos usar um recurso do Git chamado submódulo. Configuraremos o repositório público que chamei de  ` rafaeljesus.github.io ` (onde o Hugo irá gerar o **Meu Blog**), para ser um submódulo dentro do nosso projeto privado. Este submódulo será "montado" no diretório ` public/`, que é exatamente onde o Hugo gera e armazena a versão final do site/blog.
-
-Em resumo: O repositório principal e privado conterá o código-fonte, enquanto a subpasta ` public/ ` será um clone direto e atualizável do repositório público, mantendo tudo sincronizado e organizado.
-
-Uma vez definido e explicado a estrutura do **Meu Blog** vamos para o terminal. Clonamos o repositório privado com o comando:
+Com o repositório criado é hora ade clonar o projeto:
 
 ` git clone https://github.com/meu-id/meu-repositorio.git `
 
@@ -94,11 +94,7 @@ Agora, criamos o projeto com **Hugo** usando o comando abaixo:
 
 A *flag* ` --force ` força o **Hugo** a criar o site em um diretório existente, no meu caso o repositório privado que clonei anteriormente.
 
-Agora, com o comando ` cd meu-repositorio `, entramos no diretório do repositório e criamos um **submódulo** do git, clonando o **repositório publico** e nomeando o diretório como ` public/ `, conforme a explicação anterior, isso tudo usando o comando a seguir:
-
-` git submodule add https://github.com/meu-id/meu-repositorio.git public `
-
-Com isso temos a estrutura de diretórios pronta e repositórios devidamente clonados para versionamento, publicação, etc... do projeto.
+Com isso temos o repositório devidamente clonado para versionamento, publicação, etc... do projeto.
 
 - [x] 	Configurar o repositório no [GitHub](https://github.com/B4bayaga/rafaeljesus.github.io).
 
@@ -106,7 +102,7 @@ Com isso temos a estrutura de diretórios pronta e repositórios devidamente clo
 
 Outro ponto interessante do Hugo é a quantidade de **Temas ([Themes](https://themes.gohugo.io/))**, páginas prontas de fácil configuração, personalização e a grande maioria com boa documentação. Após escolha do **Tema** e ler a documentação do mesmo, seguimos no terminal para realizar a instalação.
 
-Dentro do diretório privado, aquele que contém o código **"bruto"** do projeto, criarei novamente um submodulo com **Git**, só que agora clonando o **Tema(Them)** dentro do diretório ` themes/ ` com o comando abaixo:
+Dentro do projeto, criarei um submódulo com **Git**, clonando o **Tema(Them)** dentro do diretório ` themes/ ` com o comando abaixo:
 
 `  git submodule add https://github.com/luizdepra/hugo-coder.git themes/hugo-coder `  
 
@@ -118,7 +114,7 @@ Pronto, com o arquivo ` hugo.toml ` configurado é hora de subir o **Hugo** loca
 
 ` hugo server `
 
-![Print imagem terminal rodando comando hugo server](/images/hugo_server.png)
+![Print imagem terminal rodando comando hugo server](/images/um_guia_pratico_com_hugo/hugo_server.png)
 
 - [x] 	Instalar o [Theme](https://themes.gohugo.io/themes/hugo-coder/).
 
@@ -128,7 +124,7 @@ Antes de configurar o **GitHub Pages** é muito importante configurar o **DNS**.
 
 Dentro das configurações do meu **Domínio**, acesso "***configurar zona DNS***" e seguindo a [documentação](https://docs.github.com/pt/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages#using-an-apex-domain-for-your-github-pages-site) do **GitHub Pages** e crio 4 entradas do "**Tipo A**", deixo o segundo campo(nome) em branco e aponto para os **[IPs do GitHub Pages](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)**. Em seguida, criei outra entrada,desta vez do "**Tipo CNAME**". No campo "**name**", preenchi com "**www**" e, por último, apontei para o domínio do meu **GitHub**, esse domínio é formado pelo nome do seu usuário seguido de **.github.io**.
 
-![Print imagem DNS](/images/print_conf_dns.png)
+![Print imagem DNS](/images/um_guia_pratico_com_hugo/print_conf_dns.png)
 
 Agora tenho que esperar as configurações se propagarem pelo mundo, esse tempo pode variar bastante.
 
@@ -138,22 +134,73 @@ Agora tenho que esperar as configurações se propagarem pelo mundo, esse tempo 
 
 Acessando o repositório publico no **GitHub**, segui com a configuração do **GitHub Pages**, clicando em **Settings**.
 
-![Imagem Print menu Settings do GitHub](/images/print_setings_github.png)
+![Imagem Print menu Settings do GitHub](/images/um_guia_pratico_com_hugo/print_setings_github.png)
 
 Na sequencia basta clicar em **Pages**.
 
 <div style="text-align: center;">
-  <img src="/images/print_github_pages.png" alt="Imagem Print menu Pages do GitHub" width="auto">
+  <img src="/images/um_guia_pratico_com_hugo/print_github_pages.png" alt="Imagem Print menu Pages do GitHub" width="auto">
 </div>
 
-No menu do **GitHub Pages** em ` Source ` selecione ` Deploy from branch `, mais abaixo em ` Branch ` escolha ` Main ` e depois o diretório ` /(root) `.
+No menu do **GitHub Pages** em ` Source ` selecione ` Deploy GitHub Actions `.
 
-![Print menu deploy com Branch](/images/print_deploy_branch.png)
+![Print menu deploy com Branch](/images/um_guia_pratico_com_hugo/print_deploy_actions.png)
 
 Por fim, em ` Custom Domain ` digite o seu domínio, clique em ` Save ` e aguarde o **GitHub** checar e validar a configuração.
 
 - [x] 	Configurar o [GitHub Pages](https://pages.github.com/).
 
-Pronto!! 😁, agora tenho o **Hugo** configurado, basta abrir o terminal e usar o comando ` hugo build ` que o site sera gerado. Com isso basta fazer dois commits, um no repositório privado e outra no repositório publico.
+## Criando [Workflow GitHub Actions](https://docs.github.com/en/actions/writing-workflows/quickstart). 🤖
 
-O processo manual de gerar o site com o comando **Hugo** e depois fazer o commit nos dois repositórios funciona, mas pode ser otimizado. Na parte 2 veremos continuarei com a configuração do **Meu Blog** com **Workflow GitHub Actions** e **Google Analytics**.
+Esta etapa será responsável por publicar **Meu Blog** usando automação do **GitHub Actions**, e para isso o **Hugo** disponibiliza um [Workflow](https://gohugo.io/host-and-deploy/host-on-github-pages/) pronto, basicamente basta da **copiar e colar** e pronto.
+
+Seguindo a documentação do **Hugo**, depois das etapas anteriores finalizadas voltamos no nosso arquivo ``` hugo.toml ``` e realizamos as configuração de cache de imagens incluído o código abaixo:
+
+```
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images' 
+```
+
+Agora tenho que criar o arquivo ``` hugo.yaml ``` em um diretório chamando ``` .github/workflows ```. Para isso usei o terminal:
+
+```
+mkdir -p .github/workflows
+touch .github/workflows/hugo.yaml
+```
+
+Copiei e colei o YAML disponível na [documentação](https://gohugo.io/host-and-deploy/host-on-github-pages/) no arquivo que criei. Alterei apenas a versão do Hugo de acordo com a que estou usando e o nome do **Workflow**.
+
+A ideia é que sempre que fizer um ``` push ``` na ``` main ``` as alterações serão publicadas no **GitHub Pages**.
+
+Hora de testar!
+
+```
+git add -A
+git commit -m "Cria hugo.yaml"
+git push
+```
+
+Passou de primeira!! 😁😁
+
+- [x] 	Criando [Workflow GitHub Actions](https://docs.github.com/en/actions/writing-workflows/quickstart).
+
+## Indexando página com [Google Search Console](https://search.google.com/search-console/welcome?hl=pt-BR). ✍️
+
+Neste ponto o **Meu Blog** esta online e acessível. Agora quero que seja listado no buscador do google, ou seja, indexado.
+
+De acordo minha pesquisa existe opções para isso, escolhi usar a ferramenta [Google Search Console](https://search.google.com/search-console/welcome?hl=pt-BR) obviamente do [Google](google.com).
+
+Aqui é simple, no **Google Search Console** realizei o login com minha conta google, escolhi a opção **DOMÍNIO** para o google verificar se realmente sou proprietário do domínio.
+
+![Print página google search console](/images/um_guia_pratico_com_hugo/google_search_console.png)
+
+Depois da primeira tela é hora de configurar no **DNS**. Seguindo orientação do **Google Search Console**, acesso novamente o [registro.br](https://www.registro.br/), depois "***configurar zona DNS***" e crio uma entrada do "**Tipo TXT**" e colo o registro que o google disponibiliza.
+
+Na tela do **Google Search Console** clico em verificar para que o google valide minha propriedade sobre o Domínio.
+
+![Print página google search console](/images/um_guia_pratico_com_hugo/txt_google_search_console.png)
+
+Pronto! (O google pede para aguardar 24 horas)
+
+- [x] 	Indexa página com [Google Search Console](https://search.google.com/search-console/welcome?hl=pt-BR).
