@@ -1,33 +1,33 @@
 +++ 
-draft = false
-date = 2025-06-26T10:21:35-03:00
-title = "Dando Vida ao Meu Blog [Pt-1]"
+draft = true
+date = 2025-06-27T10:21:35-03:00
+title = "Dando Vida ao Meu Blog"
 description = "Um Guia Prático com Hugo"
-slug = "iniciando-meu-blog-com-hugo-pt-1"
+slug = "iniciando-meu-blog-com-hugo"
 authors = ["Rafael Jesus"]
 tags = []
 categories = ["Tutoriais"]
 externalLink = ""
-series = ["Dando Vida ao Meu Blog"]
+series = []
 #featuredImage = "/images/hugo_server.png"
 +++
 # <center>Dando Vida ao Meu Blog: Um Guia Prático com [Hugo](https://gohugo.io/)</center>
 
-Hoje dou inicio a um projeto pessoal que visa registrar meu aprendizado na área de programação, e para isso, criei um blog pessoal. Ideia inovadora? Não! Mas o processo de escrever me ajuda a fixar o que aprendi e também serve de registro para consultas futuras, sem falar que pode vir a ajudar outras pessoas.
+Hoje dou início a um projeto pessoal que visa registrar meu aprendizado na área de programação e, para isso, criei um blog pessoal. Ideia inovadora? Não! Mas o processo de escrever me ajuda a fixar o que aprendi e também serve como registro para consultas futuras, sem falar que pode vir a ajudar outras pessoas.
 
 Para começar, qual tecnologia usar para construir e publicar o **Meu Blog**?
 
-A resposta para essa pergunta foi francamente difícil devido à vasta quantidade de opções existentes. E logo de cara, pensei em construir com ferramentas que "domino" (na data que escrevo este artigo), que são [Python](https://www.python.org/) com [Django](https://www.djangoproject.com/), depois obviamente pensei em [Wordpress](https://wordpress.org/), [Plone](https://plone.org/) entre outras. Passei uma semana inteira apenas para escolher que tecnologia usar, e foi quando vi um post do [Fabio Akita](https://github.com/akitaonrails), no post, ele descrevia como foi migrar o seu blog [AkitaOnRails](https://akitaonrails.com/), salvo engano escrito em [Rails](https://rubyonrails.org/), para usar o **Hugo**.
+A resposta para essa pergunta foi francamente difícil devido à vasta quantidade de opções existentes. E logo de cara, pensei em construir com ferramentas que "domino" (na data em que escrevo este artigo), que são [Python](https://www.python.org/) com [Django](https://www.djangoproject.com/). Obviamente, depois pensei em [Wordpress](https://wordpress.org/), [Plone](https://plone.org/) entre outras. Passei uma semana inteira apenas para escolher que tecnologia usar, e foi quando vi um post do [Fabio Akita](https://github.com/akitaonrails), no post, ele descrevia como foi migrar o seu blog [AkitaOnRails](https://akitaonrails.com/), salvo engano, escrito em [Rails](https://rubyonrails.org/), para usar o **Hugo**.
 
 Mas que diabos é **Hugo**? 🤔
 
-Pois bem, fui pesquisar e descobri que **Hugo** é um software de código aberto escrito em [Go](https://go.dev/) utilizado para gerar **sites estáticos** com a promessa de ser "extremamente rápido" e "eficiente". Ele é usado para construir diversos tipos de sites, mas é especialmente popular na criação de *Blogs*, *Sites de Documentação*, *Portfólios Pessoais ou Profissionais*, etc...
+Pois bem, fui pesquisar e descobri que **Hugo** é um software de código aberto escrito em [Go](https://go.dev/) utilizado para gerar **sites estáticos**, com a promessa de ser "extremamente rápido" e "eficiente". Ele é usado para construir diversos tipos de sites, mas é especialmente popular na criação de *blogs*, *sites de documentação*, *portfólios pessoais ou profissionais*, etc...
 
-Entre as vantagens que o **Hugo** traz por padrão, como escrita em *Markdown* e uma vasta quantidade de ***Themes***, o que mais me chamou atenção, foi a possibilidade de hospedar o **Meu Blog** no **Github Pages** totalmente **free**, o que para a natureza do projeto se encaixa como uma luva.
+Entre as vantagens que o **Hugo** traz por padrão, como escrita em *Markdown* e uma vasta quantidade de ***temas***, o que mais me chamou atenção, foi a possibilidade de hospedar o **Meu Blog** no **Github Pages** totalmente **free**, o que para a natureza do projeto se encaixa como uma luva.
 
 Mas, do que vou precisar? 🧐
 
-Bom, para começar acessei a documentação do [**Hugo**](https://gohugo.io/documentation/), e descobri que não tem como digitar um `sudo apt install hugo` e pronto, é só sair digitando loucamente, então resolvi fazer um checklist:
+Bom, para começar acessei a documentação do [**Hugo**](https://gohugo.io/documentation/), e descobri que não é tão simples quanto digitar um `sudo apt install hugo` e pronto, é só sair digitando loucamente, então resolvi fazer um checklist:
 
 - [ ] 	Instalar a linguagem [Go](https://go.dev/).
 - [ ] 	Instalar o [Hugo](https://gohugo.io/).
@@ -35,18 +35,18 @@ Bom, para começar acessei a documentação do [**Hugo**](https://gohugo.io/docu
 - [ ] 	Instalar o [Theme](https://themes.gohugo.io/themes/hugo-coder/).
 - [ ] 	Configurar DNS do Domínio.
 - [ ] 	Configurar o [GitHub Pages](https://pages.github.com/).
-- [ ] 	Criando [Workflow GitHub Actions](https://docs.github.com/en/actions/writing-workflows/quickstart).
-- [ ] 	Indexa página com [Google Search Console](https://search.google.com/search-console/welcome?hl=pt-BR).
+- [ ] 	Criar um [Workflow GitHub Actions](https://docs.github.com/en/actions/writing-workflows/quickstart).
+- [ ] 	Indexar página com [Google Search Console](https://search.google.com/search-console/welcome?hl=pt-BR).
 - [ ] 	Configurar rastreamento com [Google Analytics](https://developers.google.com/analytics?hl=pt-br).
 
 ## Instalando a linguagem [Go](https://go.dev/). 💽
 
-Antes de seguir com a instalação da linguagem de programação **GO**, devo explicar que uso o sistema operacional [Linux](https://www.linux.org/) na distribuição [Pop!_OS](https://system76.com/), portanto, todo processo de instalação e configuração se baseiam nessa configuração de sistema operacional.
+Antes de seguir com a instalação da linguagem de programação **Go**, devo explicar que uso o sistema operacional [Linux](https://www.linux.org/) na distribuição [Pop!_OS](https://system76.com/), portanto, todo o processo de instalação e configuração se baseiam nessa configuração de sistema operacional.
 Dito isso, vamos para a [documentação](https://go.dev/doc/install) oficial do **GO**, que pede para rodar o comando:
 
 ``` rm -rf /usr/local/go && tar -C /usr/local -xzf go1.24.4.linux-amd64.tar.gz ```
 
-Esse comando remove qualquer instalação anterior do **GO**, exclui a pasta ` /usr/local/go ` (caso exista), depois baixa e extrai o arquivo ` *.tar.gz `, na sequencia criando uma nova árvore de diretórios do Go em ` /usr/local/go `.
+Esse comando remove qualquer instalação anterior do **GO**, excluindo a pasta ` /usr/local/go ` (caso exista), depois baixa e extrai o arquivo ` *.tar.gz `, na sequencia criando uma nova árvore de diretórios do Go em ` /usr/local/go `.
 
 Agora adicionamos o caminho do binário na variável de ambiente do sistema com o comando:
 
@@ -201,6 +201,23 @@ Na tela do **Google Search Console** clico em verificar para que o google valide
 
 ![Print página google search console](/images/um_guia_pratico_com_hugo/txt_google_search_console.png)
 
-Pronto! (O google pede para aguardar 24 horas)
+Pronto! O google pede para aguardar 24 horas.
 
 - [x] 	Indexa página com [Google Search Console](https://search.google.com/search-console/welcome?hl=pt-BR).
+
+## Configurar rastreamento com [Google Analytics](https://developers.google.com/analytics?hl=pt-br). 📈
+
+Por fim vamos realizar o cadastro no **Google Analytics**, isso irá me fornecer dados sobre o trafego do **Meu Blog**, esse tarefa como a anterior tam´bém é muito simples, basta realizar o cadastro no [Google Analytics](https://developers.google.com/analytics?hl=pt-br), no meu caso ainda não tinha cadastro, seguir o passo a passo no site e, por fim, basta copiar o ``` G-ID ``` que o google disponibiliza.
+
+No arquivo ``` hugo.toml ```, temos que incluir o parâmetro ``` googleAnalyticsID ``` com o ``` G-ID ``` que copiamos no site do google:
+
+```
+[params.googleTagManager]
+id = "G-ID" # Substituir pelo seu G-ID
+```
+
+Pronto! 🎉🎉🎉
+
+Após todo o processo o [Google Analytics](https://developers.google.com/analytics?hl=pt-br) ira validar o G-ID e passara a fornecer dados de trafego do **Meu Blog**.
+
+Com isso concluo o meu tutorial, [Dando Vida ao Meu Blog: Um Guia Prático com Hugo](https://rafaeljesus.dev.br/posts/iniciando-meu-blog-com-hugo/). Foi relativamente difícil pra mim, mesmo com experiência de aproximadamente 3 anos com programação, mas no fim, bastou segui a documentação oficial de cada tecnologia, então, leiam a documentação!
