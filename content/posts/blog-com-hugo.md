@@ -1,5 +1,5 @@
 +++ 
-draft = true
+draft = false
 date = 2025-06-27T10:21:35-03:00
 title = "Dando Vida ao Meu Blog"
 description = "Um Guia Prático com Hugo"
