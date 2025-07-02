@@ -20,9 +20,14 @@ featuredImage = "/images/aprendendo_javascript/vergonha/javascript_640.png"
 
 Este post tem o objetivo de registra todos os meus passo durante o aprendizado desta tecnologia, meu objetivo aqui é focar no **FrontEnd**, validações, nas interações da página com o usuário, etc... Para alcançar meu objetivo irei me basear neste [roadmap](https://roadmap.sh/javascript), na documentação da [Mozilla](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript), alé de outras fontes como YouTube, cursos, blogs, etc...
 
-## console.log('HELLO WORLD!') 🌎
+## Pequena introdução 🤸‍♂️
 
 **JavaScrip** é uma linguagem de programação interpretada, dinamicamente tipada, e roda nativamente nos principais browsers do mercado, o que o torna muito acessível, bastando apenas abrir o navegar apertar ``` F12 ```, clicar em console e programar. Há também versões mais avançadas do lado do servidor do JavaScript, como Node.js, mas como disse anteriormente, o meu foco é no lado do cliente.
 
 Criada para rodar nativamente no navegador [Netscape](https://pt.wikipedia.org/wiki/Netscape_Navigator) em 1995 pelo programador [Brendan Eich](https://pt.wikipedia.org/wiki/Brendan_Eich), o **JavaScript** foi adotado rapidamente devido ao poder que fornecia aos programadores e definers da internet, isso fez com que o Netscape se tronasse muito popular na década de 90. Usei muito o Netscape para navegar na web no fim de 90's e inicio de 00's, eu o adorava. ❤️
 
+## console.log('HELLO WORLD!') 🌎
+
+Como disse, meu foco é no lado do cliente, então vou começar usando o console do navegador. Estou usando o [Google Chrome](https://www.google.com/intl/pt-BR/chrome/), a escolha se deve ao fato dele ser o navegador mais usado no memento.
+
+Seguindo o tutoria da **Mozilla**...
