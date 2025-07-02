@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>#Programação on Rafael Jesus</title>
+    <link>http://localhost:1313/tags/%23programa%C3%A7%C3%A3o/</link>
+    <description>Recent content in #Programação on Rafael Jesus</description>
+    <generator>Hugo</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Wed, 02 Jul 2025 08:42:50 -0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%23programa%C3%A7%C3%A3o/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vergonha não saber JavaScript 🫣</title>
+      <link>http://localhost:1313/posts/vergonha-nao-saber-javascript/</link>
+      <pubDate>Wed, 02 Jul 2025 08:42:50 -0300</pubDate>
+      <guid>http://localhost:1313/posts/vergonha-nao-saber-javascript/</guid>
+      <description>&lt;h1 id=&#34;uma-jornada-no-aprendizado-da-linguagem-de-programação-javascript&#34;&gt;&#xA;  &lt;center&gt;Uma jornada no aprendizado da linguagem de programação &lt;a href=&#34;https://developer.mozilla.org/pt-BR/docs/Web/JavaScript&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;JavaScript&lt;/a&gt;&lt;/center&gt;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#uma-jornada-no-aprendizado-da-linguagem-de-programa%c3%a7%c3%a3o-javascript&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link para o cabeçalho&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link para o cabeçalho&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;É verdade, são mais de 3 anos estudado, desenvolvendo projetos com programação e ainda não aprendi &lt;strong&gt;JavaScript&lt;/strong&gt;! Isso me deixa com muita &lt;strong&gt;VERGONHA&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Este post tem o objetivo de registra todos os passo durante o aprendizado desta tecnologia,&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
